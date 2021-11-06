@@ -1,0 +1,1039 @@
+id,champion_id,passive,q,w,e,r
+1,1,"Soul Eater
+INNATE: Nasus gains Life steal icon.png 10 / 16 / 22% (based on level) life steal.","
+Siphoning Strike
+CAST TIME: NONE
+COST: 20 MANA
+COOLDOWN: 7.5 / 6.5 / 5.5 / 4.5 / 3.5
+ACTIVE: Nasus' next basic attack within 10 seconds has an Vi Relentless Force 2.png uncancelable windup, gains Range icon.png 25 bonus range, and deals bonus physical damage.
+
+BONUS PHYSICAL DAMAGE:
+30 / 50 / 70 / 90 / 110 (+ Siphoning Strike stacks)
+If Siphoning Strike kills its target, Nasus permanently gains 3 stacks, increased to 12 if its target is a Champion icon.png champion, large Minion icon.png minion, or large Monster icon.png monster.
+
+Siphoning Strike Fiora Bladework.png resets Nasus' basic attack timer.","Wither
+TARGET RANGE: Range center.png 700
+CAST TIME: 0.25
+COST: 80 MANA
+COOLDOWN: 15 / 14 / 13 / 12 / 11
+Nasus Wither.png
+ACTIVE: Nasus ages the target enemy champion for 5 seconds, Slow icon.png slowing them by 35% and Cripple icon.png crippling them by「 half that amount 」, both increasing over the duration.
+
+MAXIMUM SLOW:»
+47 / 59 / 71 / 83 / 95%
+MAXIMUM CRIPPLE:»
+23.5 / 29.5 / 35.5 / 41.5 / 47.5%","Spirit Fire
+TARGET RANGE: 650
+EFFECT RADIUS: Range center.png 400 / Sight icon.png 200
+CAST TIME: 0.25
+COST: 70 / 85 / 100 / 115 / 130 MANA
+COOLDOWN: 12
+Nasus Spirit Fire.png
+ACTIVE: Nasus unleashes a spirit flame at the target location, Sight icon.png revealing its center for 2.5 seconds and, after a 0.264 seconds delay, dealing magic damage to all enemies within the area.
+
+MAGIC DAMAGE:
+55 / 95 / 135 / 175 / 215 (+ 60% AP)
+The flame then remains for 5 seconds, dealing magic damage each second to all enemies within the area and Armor penetration icon.png reducing their armor while they are inside, lingering for 1 second.
+
+MAGIC DAMAGE PER TICK:»
+11 / 19 / 27 / 35 / 43 (+ 12% AP)
+ARMOR REDUCTION:
+25 / 30 / 35 / 40 / 45% of target's armor","Fury of the Sands
+EFFECT RADIUS: Range center.png 400
+CAST TIME: 0.2
+COST: 100 MANA
+COOLDOWN: 120
+Nasus Fury of the Sands.png
+ACTIVE: Nasus empowers himself for 15 seconds, gaining Health icon.png bonus health, Armor icon.png bonus armor, Magic resistance icon.png bonus magic resistance, 30% increased size, and Range icon.png 50 bonus attack range for the duration.
+
+BONUS HEALTH:
+300 / 450 / 600
+BONUS RESISTANCES:
+40 / 55 / 70
+While Nasus is empowered, he deals magic damage to nearby enemies each second, capped at 240 per second, and Siphoning Strike's Siphoning Strike's Cooldown reduction icon.png cooldown is halved.
+
+MAGIC DAMAGE PER TICK:»
+3 / 4 / 5% (+ 1% per 100 AP) of target's maximum health"
+2,2,"Flurry
+Lee Sin Flurry.png
+INNATE: After casting an ability, Lee Sin's next 2 basic attacks within 3 seconds gain Attack speed icon.png 40% bonus attack speed and restore Energy icon.png energy.
+
+The first attack restores 20 / 30 / 40 (based on level) energy and the second attack restores「 half of that amount. 」","Edit
+Sonic Wave
+TARGET RANGE: Range center.png 1200
+EFFECT RADIUS: Sight icon.png 400
+WIDTH: Range model.png 120
+SPEED: 1800
+CAST TIME: 0.25
+COST: 50 ENERGY
+COOLDOWN: 10 / 9 / 8 / 7 / 6
+Lee Sin Sonic Wave.png
+ACTIVE: Lee Sin fires a sonic blast in the target direction, dealing physical damage to the first enemy it hits and marking them for 3 seconds, during which they are True Sight icon.png revealed.
+
+PHYSICAL DAMAGE:
+55 / 80 / 105 / 130 / 155 (+ 100% bonus AD)
+While the target is marked, Lee Sin can cast Resonating Strike Resonating Strike.","Safeguard
+TARGET RANGE: Range center.png 700
+SPEED: 1350 + 100% MS
+CAST TIME: NONE
+COST: 50 ENERGY
+COOLDOWN: 12
+Lee Sin Safeguard.png
+ACTIVE: Lee Sin Dash.png dashes to the target allied unit's location. If the ally is a Champion icon.png champion, both they and Lee Sin are granted a Hybrid resistances icon.png shield for 2 seconds upon his arrival and Safeguard's Cooldown reduction icon.png cooldown is halved. Lee Sin can self-cast Safeguard to shield himself.
+
+SHIELD:
+55 / 110 / 165 / 220 / 275 (+ 80% AP)
+If Safeguard is used, Lee Sin can cast Iron Will Iron Will within the next 3 seconds at no delay.
+
+Edit
+Iron Will
+CAST TIME: NONE
+COST: 30 ENERGY
+Lee Sin Iron Will.png
+ACTIVE: Lee Sin gains Life steal icon.png life steal and Spell vamp icon.png spell vamp for 4 seconds.
+
+BONUS DRAIN:
+5 / 10 / 15 / 20 / 25%","Tempest
+EFFECT RADIUS: Range center.png 450
+CAST TIME: 0.25
+COST: 50 ENERGY
+COOLDOWN: 9
+Lee Sin Tempest.png
+ACTIVE: Lee Sin smashes the ground beneath him, dealing magic damage to nearby enemies, marking them for 4 seconds and, if they are not Akali Twilight Shroud old2.png invisible when struck, True Sight icon.png revealing them for the same duration.
+
+MAGIC DAMAGE:
+100 / 130 / 160 / 190 / 220 (+ 100% bonus AD)
+If Tempest hits an enemy, Lee Sin can cast Cripple Cripple within the next 3 seconds after a 0.1-second delay.
+
+Edit
+Cripple
+EFFECT RADIUS: Range center.png 550 / 600
+SPEED: 1600
+CAST TIME: NONE
+COST: 30 ENERGY
+Lee Sin Cripple.png
+ACTIVE: Lee Sin sends a wave at each nearby enemy marked by Tempest Tempest, which Slow icon.png slows them for 4 seconds, decaying over the duration.
+
+SLOW:
+20 / 30 / 40 / 50 / 60%","Edit
+Dragon's Rage
+TARGET RANGE: Range center.png 375
+COLLISION RADIUS: Range center.png 160
+CAST TIME: 0.25
+COOLDOWN: 110 / 85 / 60
+Lee Sin Dragon's Rage.png
+ACTIVE: Lee Sin Root icon.png roots the target enemy champion during the cast time after which he roundhouse kicks them, dealing them physical damage and Airborne icon.png knocking them back up-to 800 units over 0.8 seconds, rendering them Airborne icon.png airborne for 1 second.
+
+PHYSICAL DAMAGE:
+175 / 400 / 625 (+ 200% bonus AD)
+Enemies that collide with the displaced enemy while it is Airborne icon.png airborne take bonus physical damage and are Airborne icon.png knocked up for 1 second.
+
+COLLISION DAMAGE:
+175 / 400 / 625 (+ 200% bonus AD) (+ 12 / 15 / 18% of primary target's bonus health)"
+3,3,"Assassin's Mark
+EFFECT RADIUS: 500
+Akali Assassin's Mark.png
+INNATE: Akali's damaging abilities against enemy Champion icon.png champions will mark a ring around them for 4 seconds, granting her 30 / 40 / 50 / 60% (based on level) Movement speed icon.png bonus movement speed for 2 seconds while moving away from them. Subsequent damaging abilities against enemy champions while a ring is active will only refresh its duration.
+
+If Akali leaves the ring within its duration, she regains the bonus movement speed while moving towards enemy champions for 2 seconds and gains Swinging Kama for 4 seconds, during which she cannot create another ring.
+
+SWINGING KAMA: Akali's next basic attack's Range icon.png range is doubled and deals 35 − 182 (based on level) (+ 60% bonus AD) (+ 55% AP) bonus magic damage.","Edit
+Five Point Strike
+TARGET RANGE: 500 / 120
+WIDTH: 350
+ANGLE: 20°
+CAST TIME: 0.25
+COST: 130 / 115 / 100 / 85 / 70 ENERGY
+COOLDOWN: 1.5
+Akali Five Point Strike.png
+ACTIVE: Akali unleashes kunais in a cone in the target direction, dealing magic damage to enemies hit. Targets at maximum range are also Slow icon.png slowed by 50% for 0.5 seconds.
+
+MAGIC DAMAGE:
+30 / 55 / 80 / 105 / 130 (+ 65% AD) (+ 60% AP)","Edit
+Twilight Shroud
+TARGET RANGE: 250
+EFFECT RADIUS: 350 / 1175
+CAST TIME: 0.25
+COOLDOWN: 20
+Akali Twilight Shroud.png
+ACTIVE: Akali restores Energy icon.png 80 energy over 0.4 seconds, gains Movement speed icon.png bonus movement speed that decays over 2 seconds, and detonates a smoke bomb a fixed distance away in the target direction, creating a circular shroud that expands over the next 5 seconds into a ring. The shroud does not permeate terrain, and will expand toward nearby enemy champions. While the shroud is active, Akali's maximum energy is increased by 80.
+
+BONUS MOVEMENT SPEED:
+30 / 35 / 40 / 45 / 50%
+SHROUD DURATION:
+5 / 5.5 / 6 / 6.5 / 7
+Entering the shroud renders Akali Akali Twilight Shroud old2.png invisible, unless she is Dash.png dashing.
+
+Declaring a basic attack or casting an ability will break the invisibility and prevent Akali from entering it for 1 − 0.625 (based on minutes) seconds, refreshing on subsequent attacks and casts.
+
+The marked marked section of Twilight Shroud will linger for the mark's duration, even after the shroud ends.","Shuriken Flip
+TARGET RANGE: Range model.png 825
+EFFECT RADIUS: GLOBAL
+WIDTH: Range model.png 120
+SPEED: 1800 / 1500
+CAST TIME: 0.4 / 0.25
+COST: 30 ENERGY
+COOLDOWN: 16 / 14.5 / 13 / 11.5 / 10
+Akali Shuriken Flip.png
+ACTIVE: Akali Dash.png flips backward and, after the cast time, sends a shuriken in the target direction that deals magic damage to the first enemy hit.
+
+MAGIC DAMAGE:
+30 / 56.25 / 82.5 / 108.75 / 135 (+ 25.5% AD) (+ 36% AP)
+The shuriken marks the enemy or the last smoke smoke section hit for 3 seconds, Reveal icon.png revealing them for the duration. While the target or smoke section is marked, Shuriken Flip can be recast.
+
+Akali Shuriken Flip 2.png
+RECAST: Akali Dash.png dashes towards the marked target or smoke section, consuming the mark, regardless of distance. Against enemies it deals magic damage upon arrival.
+
+DASH DAMAGE:»
+70 / 131.25 / 192.5 / 253.75 / 315 (+ 59.5% AD) (+ 84% AP)
+Akali will not flip backwards if she is Stun icon.png immobilized or Grounded icon.png grounded during the cast time.","Perfect Execution
+TARGET RANGE: Range center.png 675
+COLLISION RADIUS: Range model.png 110
+SPEED: 1500 / 3000
+CAST TIME: NONE (0.25) / NONE
+COOLDOWN: 100 / 80 / 60
+Akali Perfect Execution.png
+ACTIVE: Akali Dash.png dashes 750 units in the direction of the target enemy Champion icon.png champion, dealing magic damage to enemies she passes through.
+
+MAGIC DAMAGE:
+80 / 220 / 360 (+ 50% bonus AD) (+ 30% AP)
+If Akali hits an enemy, she flips over them, continuing the dash up to its normal 750 range but at least another 150 units, for a total maximum dash distance of 900 units if the first enemy she hit was at the maximum dash range.
+
+Perfect Execution can be recast after 2.5 seconds within 10 seconds of the first activation.
+
+Akali Perfect Execution 2.png
+RECAST: Akali Dash.png dashes 800 units in the target direction, dealing magic damage to enemies she passes through, increased by 0% − 200% (based on target's missing health).
+
+MINIMUM MAGIC DAMAGE:»
+60 / 130 / 200 (+"
+4,4,"Double Strike
+Master Yi Double Strike.png
+INNATE: Master Yi's basic attacks On-hit icon.png on-hit grant a stack of Double Strike for 4 seconds, stacking up to 3 times, with the duration refreshing on subsequent attacks. At 3 stacks, Master Yi's next basic attack On-hit icon.png on-hit consumes the stacks to strike twice, the second strike dealing 50% AD physical damage.
+
+The second strike applies On-hit icon.png on-hit and Lulu Pix, Faerie Companion.png on-attack effects at 100% effectiveness and is affected by Critical strike icon.png critical strike modifiers.
+
+If Master Yi's primary target is killed before the second strike, he automatically attacks another enemy within 300 range.
+
+The second strike can Critical strike icon.png critically strike Turret icon.png structures.","Alpha Strike
+TARGET RANGE: Range center.png 600
+EFFECT RADIUS: Range center.png 600
+CAST TIME: NONE
+COST: 50 / 55 / 60 / 65 / 70 MANA
+COOLDOWN: 18 / 17.5 / 17 / 16.5 / 16
+Master Yi Alpha Strike.png
+ACTIVE: Master Yi Shaco Hallucinate.png vanishes and becomes Lockout icon 2.png unable to act and, after 0.231 seconds, marks the target enemy and then moves to mark the nearest Sight icon.png visible un-marked enemy within 600 units, recurring up to 3 times, once every 0.231 seconds.
+
+Upon finishing marking, or if there are no longer any targetable enemies, he Flash.png reappears and becomes able to act again 「 after 0.165 seconds 」in front of the target and deals physical damage to all marked enemies, increased against Monster icon.png monsters. If the target Death.png dies or gets too far away during the delay, he will reappear at the cast location instead.
+
+PHYSICAL DAMAGE:»
+25 / 60 / 95 / 130 / 165 (+ 90% AD)
+If there are no other un-marked enemies in range, he may strike the same enemies again, dealing 25% damage instantly.
+
+REDUCED DAMAGE:»
+6.25 / 15 / 23.75 / 32.5 / 41.25 (+ 22.5% AD)
+MAXIMUM SINGLE-TARGET DAMAGE:»
+43.75 / 105 / 166.25 / 227.5 / 288.75 (+ 157.5% AD)
+Alpha Strike's primary and lesser damage can Critical strike icon.png critically strike for (54% + 18.9% 18.9%) AD bonus physical damage and (13.5% + 4.725% 4.725%) AD bonus physical damage respectively.
+
+Basic attacks On-hit icon.png on-hit reduce Alpha Strike's Cooldown reduction icon.png cooldown by 1 second.","Edit
+Meditate
+CAST TIME: NONE
+COST: 50 MANA
+COOLDOWN: 28
+Master Yi Meditate.png
+ACTIVE: Master Yi Channeling icon.png channels for up to 4 seconds, Heal power icon.png healing himself every 0.5 seconds, increased by 0% − 100% (based on missing health).
+
+MINIMUM HEALING PER HALF SECOND:»
+15 / 25 / 35 / 45 / 55 (+ 12.5% AP)
+MINIMUM TOTAL HEALING:»
+120 / 200 / 280 / 360 / 440 (+ 100% AP)
+While channeling, Master Yi gains Damage reduction icon.png damage reduction, halved against Turret icon.png turrets, pauses Wuju Style's Wuju Style's and Highlander's Highlander's duration, and gains one stack of Double Strike Double Strike per second.
+
+DAMAGE REDUCTION:»
+60 / 62.5 / 65 / 67.5 / 70%
+If the channel is cancelled, Master Yi reduces incoming damage for another 0.25 seconds, with lesser effectiveness against non-turret damage but greater effectiveness vs turret damage. (bug)
+
+POST-CHANNEL DAMAGE REDUCTION:»
+40 / 37.5 / 35 / 32.5 / 30%
+Meditate Fiora Bladework.png resets Master Yi's basic attack timer.","Edit
+Wuju Style
+CAST TIME: NONE
+COOLDOWN: 18 / 17 / 16 / 15 / 14
+Master Yi Wuju Style.png
+ACTIVE: Master Yi empowers his sword, causing his basic attacks to deal Hybrid penetration icon.png bonus true damage On-hit icon.png on-hit for 5 seconds.
+
+TRUE DAMAGE:
+30 / 40 / 50 / 60 / 70 (+ 35% bonus AD)","Highlander
+CAST TIME: NONE
+COST: 100 MANA
+COOLDOWN: 85
+PASSIVE: Scoring a Damage rating.png takedown against an enemy Champion icon.png champion reduces the current Cooldown reduction icon.png cooldowns of Master Yi's basic abilities by 70%.
+
+Master Yi Highlander.png
+ACTIVE: Master Yi Gangplank Remove Scurvy.png cleanses himself from all Slow icon.png slows and Cripple icon.png cripples and gains Ghost.png ghosting, Attack speed icon.png bonus attack speed, Movement speed icon.png bonus movement speed, Slow immune 2.png slow immunity, and Cripple immune.png cripple immunity all for the next 7 seconds.
+
+BONUS ATTACK SPEED:
+25 / 45 / 65%
+BONUS MOVEMENT SPEED:
+35 / 45 / 55%
+While active, scoring a Damage rating.png takedown against an enemy champion extends Highlander's duration by 7 seconds."
+5,5,"Edit
+Determination
+Xin Zhao Determination.png
+INNATE: Xin Zhao gains a Determination I and Determination II stack for every Wind Becomes Lightning Wind Becomes Lightning strike or basic attack On-hit icon.png on-hit, up to a maximum of two.
+
+At two Determination I stacks, Xin Zhao's next Wind Becomes Lightning Wind Becomes Lightning strike or basic attack On-hit icon.png on-hit consumes the stacks to Heal power icon.png heal him for 7 − 92 (based on level) (+ 10% AD) (+ 55% AP).
+
+At two Determination II stacks, Xin Zhao's next Wind Becomes Lightning Wind Becomes Lightning strike or basic attack Lulu Pix, Faerie Companion.png on-attack consumes the stacks to deal 15 / 25 / 35 / 45% (based on level) AD bonus physical damage.","Edit
+Three Talon Strike
+CAST TIME: NONE
+COST: 30 MANA
+COOLDOWN: 7 / 6.5 / 6 / 5.5 / 5
+Xin Zhao Three Talon Strike.png
+ACTIVE: Xin Zhao empowers his spear for 5 seconds, causing his next three basic attacks Lulu Pix, Faerie Companion.png on-attack to have an Vi Relentless Force 2.png uncancelable windup, deal bonus physical damage and reduce his other abilities' Cooldown reduction icon.png cooldowns by 1 second each. The second attack will refresh Three Talon Strike's duration.
+
+BONUS PHYSICAL DAMAGE:»
+16 / 25 / 34 / 43 / 52 (+ 40% bonus AD)
+The third attack consumes the effect to Airborne icon.png knock up the target for 0.75 seconds.
+
+Three Talon Strike Fiora Bladework.png resets Xin Zhao's basic attack timer and is affected by Critical strike icon.png critical strike modifiers.","Edit
+Wind Becomes Lightning
+RANGE: Range center.png 1000 / Range model.png 940
+EFFECT RADIUS: Range model.png 275 / Range center.png 125
+WIDTH: Range model.png 80
+ANGLE: Range model.png 160º
+SPEED: 6250
+CAST TIME: 0.5
+COST: 60 MANA
+COOLDOWN: 12 / 11 / 10 / 9 / 8
+Xin Zhao Wind Becomes Lightning.png
+ACTIVE: Xin Zhao uses his spear to slash in an arc and, after the cast time, unleashes a thrust in a line in the target direction. Each strike deals physical damage to all enemies hit, modified to 50% − 100% (based on level) against Minion icon.png minions, and the thrust's damage is increased by 0% − 33.3% (based on critical strike chance). Enemies hit by the thrust are also Slow icon.png slowed by 50% for 1.5 seconds and, if they are a champion or a monster, are Challenged Challenged and Reveal icon.png revealed for 3 seconds.
+
+SLASH DAMAGE:
+30 / 40 / 50 / 60 / 70 (+ 30% AD)
+THRUST DAMAGE:
+40 / 75 / 110 / 145 / 180 (+ 80% AD) (+ 50% AP)
+TOTAL DAMAGE:
+70 / 115 / 160 / 205 / 250 (+ 110% AD) (+ 50% AP)
+The durations of Three Talon Strike Three Talon Strike, Audacious Charge's Audacious Charge's bonus attack speed, and Crescent Guard Crescent Guard are delayed relative to Wind Becomes Lightning's cast time after 0.2 seconds of its activation.
+
+Wind Becomes Lightning's damage Heal power icon.png heals Xin Zhao for 33.3% of his Life steal icon.png life steal.","Audacious Charge
+TARGET RANGE: Range center.png 650 / 1100
+EFFECT RADIUS: Range center.png 250
+SPEED: 2500
+CAST TIME: NONE
+COST: 50 MANA
+COOLDOWN: 11
+Xin Zhao Audacious Charge.png
+ACTIVE: Xin Zhao Dash.png dashes to the target enemy's location, dealing magic damage to all enemies around the primary target and Slow icon.png slowing them by 30% for 0.5 seconds. Audacious Charge's range is increased against Challenged Challenged targets.
+
+MAGIC DAMAGE:
+50 / 75 / 100 / 125 / 150 (+ 60% AP)
+Xin Zhao then gains Attack speed icon.png bonus attack speed for 5 seconds.
+
+BONUS ATTACK SPEED:
+40 / 45 / 50 / 55 / 60%
+Xin Zhao cannot cast Wind Becomes Lightning Wind Becomes Lightning while dashing, but he may still buffer it. Three Talon Strike Three Talon Strike and Crescent Guard Crescent Guard can both be cast during the dash.","Crescent Guard
+EFFECT RADIUS: Range center.png 500 / 450
+CAST TIME: 0.35
+COST: 100 MANA
+COOLDOWN: 120 / 110 / 100
+Xin Zhao Challenge.png
+PASSIVE - CHALLENGE: The last enemy champion hit by Xin Zhao's basic attacks, Wind Becomes Lightning's Wind Becomes Lightning's thrust or Audacious Charge Audacious Charge is Challenged Challenged for 3 seconds.
+
+Xin Zhao Crescent Guard.png
+ACTIVE: Xin Zhao sweeps his spear around him, dealing physical damage to all nearby enemies, capped at 600 against Monster icon.png monsters, and Airborne icon.png knocking back all non-Challenged Challenged targets hit up-to 700 units over 0.75 seconds, as well as Stun icon.png stunning them for the same duration.
+
+PHYSICAL DAMAGE:
+75 / 175 / 275 (+ 100% bonus AD) (+ 110% AP) (+ 15% of target's current health)
+For the next 5 seconds, Xin Zhao is also Taric Cosmic Radiance.png invulnerable to enemy Champion icon.png champions more than 450-units away from him."
+6,6,"Edit
+The Relentless Storm
+EFFECT RADIUS: 450
+Volibear The Relentless Storm.png
+INNATE: Volibear gains a stack of The Relentless Storm for 6 seconds whenever he damages at least one enemy with a basic attack or ability, stacking up to 5 times, with the duration refreshing on subsequent damaging attacks and abilities. At 5 stacks, Volibear gains Lightning Claws.
+
+THE RELENTLESS STORM: Volibear gains Attack speed icon.png 5% (+ 4% per 100 AP) bonus attack speed per stack, up to 25% (+ 20% per 100 AP).
+
+LIGHTNING CLAWS: Volibear's claws ignite with lightning, causing his basic attacks On-hit icon.png on-hit to deal 11 − 60 (based on level) (+ 40% AP) bonus magic damage to the target and the closest Sight icon.png visible enemy within 450 units of the target, chaining up to 4 subsequent targets.","Thundering Smash
+CAST TIME: NONE
+COST: 50 MANA
+COOLDOWN: 14 / 13 / 12 / 11 / 10
+Volibear Thundering Smash.png
+ACTIVE: Volibear drops on all fours, becoming Ghost.png ghosted and gaining Movement speed icon.png bonus movement speed for 4 seconds, doubled when moving towards Sight icon.png visible enemy Champion icon.png champions within 2000 units.
+
+BONUS MOVEMENT SPEED:»
+10 / 14 / 18 / 22 / 26%
+For the same duration, Volibear's next basic attack has an Vi Relentless Force 2.png uncancelable windup, Dash.png pounces on the target, deals bonus physical damage, and Stun icon.png stuns the target for 1 second.
+
+BONUS DAMAGE:
+20 / 40 / 60 / 80 / 100 (+ 120% bonus AD)
+If Volibear becomes Stun icon.png immobilized by an enemy while Thundering Smash is active, the effect ends prematurely and the ability's Cooldown reduction icon.png cooldown is reset.
+
+Thundering Smash Fiora Bladework.png resets Volibear's basic attack timer, benefits from Life steal icon.png life steal at 100% effectiveness and is affected by Critical strike icon.png critical strike modifiers.","Edit
+Frenzied Maul
+TARGET RANGE: Range center.png 325 / 350
+CAST TIME: 0.25
+COST: 30 / 35 / 40 / 45 / 50 MANA
+COOLDOWN: 5
+Volibear Frenzied Maul.png
+ACTIVE: Volibear strikes the target enemy, dealing them physical damage, applying On-hit icon.png on-hit and Lulu Pix, Faerie Companion.png on-attack effects at 100% effectiveness, and Wounding them for 8 seconds.
+
+PHYSICAL DAMAGE:»
+10 / 35 / 60 / 85 / 110 (+ 100% AD) (+ 6% of his bonus health)
+Against a Wounded enemy, Volibear instead bites the target, dealing Critical strike physical icon.png 50% increased damage and Heal power icon.png healing himself. The heal is halved against Minion icon.png minions.
+
+HEAL:»
+20 / 35 / 50 / 65 / 80 (+ 8 / 10 / 12 / 14 / 16% of his missing health)
+Frenzied Maul benefits from Life steal icon.png life steal at 100% effectiveness.","Edit
+Sky Splitter
+TARGET RANGE: 1200
+EFFECT RADIUS: Range center.png 325 / 425
+CAST TIME: NONE
+COST: 60 MANA
+COOLDOWN: 15
+Volibear Sky Splitter.png
+ACTIVE: Volibear summons a lightning bolt to strike at the target location after a 2-second delay. If Volibear is within the lightning strike, he Hybrid resistances icon.png shields himself for 15% of his maximum health (+ 80% AP) for 3 seconds.
+
+Volibear Sky Splitter 2.png
+The lightning bolt deals magic damage to all enemies struck within the area, capped at 750 against non-champions, Slow icon.png slows them by 40% for 2 seconds, and grants Sight icon.png sight of the area for 1 second.
+
+MAGIC DAMAGE:
+80 / 110 / 140 / 170 / 200 (+ 80% AP) (+ 11 / 12 / 13 / 14 / 15% of target's maximum health)","Stormbringer
+TARGET RANGE: 700
+EFFECT RADIUS: Range center.png 300 / 500 / 700
+SPEED: 750
+CAST TIME: NONE
+COST: 100 MANA
+COOLDOWN: 160 / 140 / 120
+Volibear Stormbringer.png
+ACTIVE: Volibear gains Stormbringer for 12 seconds and Dash.png leaps to the target location with Cc-immune icon.png immunity to crowd control as well as granting Sight icon.png sight of the area in a 500 radius during the travel.
+
+STORMBRINGER: Volibear gains Ghost.png ghosting, Health icon.png bonus health, Range icon.png 50 bonus attack range, 25 increased range on Frenzied Maul Frenzied Maul, and 35% increased size.
+
+BONUS HEALTH:
+200 / 400 / 600
+Volibear impacts after 1 second, Slow icon.png slowing all enemies in an area by 50%, decaying over 1 second. Enemies in the epicenter are also dealt Critical strike physical icon.png physical damage.
+
+PHYSICAL DAMAGE:
+300 / 500 / 700 (+ 250% bonus AD) (+ 125% AP)
+Volibear also disables enemy Turret icon.png turrets in an area for a few seconds, rendering them unable to attack, as well as dealing them the same Critical strike physical icon.png physical damage.
+
+TURRET DISABLE DURATION:
+3 / 4 / 5
+Stormbringer will cast at max range if cast beyond that. Thundering Smash's Thundering Smash's duration will be paused for the Dash.png leap."
+7,7,"Edit
+Arcane Mastery
+Ryze Arcane Mastery.png
+INNATE: Ryze gains (5% per 100 AP) Mana icon.png maximum mana.","Overload
+TARGET RANGE: Range center.png 1000
+WIDTH: Range model.png 110
+SPEED: 1700
+CAST TIME: 0.25
+COST: 40 / 38 / 36 / 34 / 32 MANA
+COOLDOWN: 6
+Ryze Overload 5.png
+PASSIVE: Ryze's other basic abilities reset Cooldown reduction icon.png Overload's cooldown and charge a Rune Rune for 4 seconds, up to 2.
+
+Ryze Overload.png
+ACTIVE: Ryze unleashes a runic blast in the target direction, dealing magic damage to the first enemy struck and consuming all of his Runes Runes.
+
+MAGIC DAMAGE:
+75 / 100 / 125 / 150 / 175 (+ 40% AP) (+ 3% bonus mana)
+Ryze Overload 4.png
+If Ryze consumes 2 Runes, he gains Movement speed icon.png bonus movement speed for 2 seconds.
+
+BONUS MOVEMENT SPEED:
+28 / 32 / 36 / 40 / 44%
+Flux: FLUX: Overload deals 10 / 40 / 70 / 100% (based on Ryze Realm Warp.png Realm Warp's rank) Critical strike magic icon.png increased damage, and spreads to all nearby enemies marked with Flux.","Rune Prison
+TARGET RANGE: Range model.png 550
+CAST TIME: 0.25
+COST: 40 / 55 / 70 / 85 / 100 MANA
+COOLDOWN: 13 / 12 / 11 / 10 / 9
+Ryze Rune Prison.png
+ACTIVE: Ryze imprisons the target enemy, dealing them magic damage and Slow icon.png slowing them by 35% for 1.5 seconds.
+
+MAGIC DAMAGE:
+80 / 110 / 140 / 170 / 200 (+ 60% AP) (+ 4% bonus mana)
+Flux: FLUX: Rune Prison's Slow icon.png slow is converted to a Root icon.png root for the same duration.","Edit
+Spell Flux
+TARGET RANGE: Range model.png 550
+EFFECT RADIUS: Range center.png 350
+CAST TIME: 0.25
+COST: 40 / 55 / 70 / 85 / 100 MANA
+COOLDOWN: 3.5 / 3.25 / 3 / 2.75 / 2.5
+Ryze Spell Flux.png
+ACTIVE: Ryze hurls an orb of runic energy at the target enemy that upon arrival deals them magic damage.
+
+MAGIC DAMAGE:
+60 / 80 / 100 / 120 / 140 (+ 30% AP) (+ 2% bonus mana)
+Spell Flux marks the primary target and all enemies near them with Flux for 3 seconds. Ryze's basic abilities against enemies with Flux consume the mark to become empowered.
+
+Flux: FLUX: Spell Flux spreads further.","Realm Warp
+TARGET RANGE: 3000 / 1000
+EFFECT RADIUS: Range center.png 365 / Sight icon.png 515
+CAST TIME: NONE
+COST: 100 MANA
+COOLDOWN: 210 / 180 / 150
+PASSIVE: Increases Overload's Overload's damage against targets marked with Spell Flux Spell Flux.
+
+BONUS OVERLOAD DAMAGE:
+40 / 70 / 100%
+Ryze Realm Warp.png
+ACTIVE: Ryze opens a portal on the ground at his current location and Channeling icon.png channels for 2 seconds, gaining Sight icon.png sight of the portal's destination at the target location. Upon completion, all allied units within the portal Flash.png blink to the destination and become Root icon.png rooted, Disarm icon.png disarmed, Silence icon.png silenced and Fizz Playful.png untargetable for 0.75 seconds.
+
+Realm Warp casts at maximum range if cast beyond that."
+8,8,"Edit
+Loaded Dice
+Twisted Fate Loaded Dice.png
+INNATE: Every time Twisted Fate kills an enemy, he gains Gold1 − 6 (based on probability).
+
+Since his dice are loaded, Twisted Fate has an increased chance of gaining 6 Gold 6.","Edit
+Wild Cards
+TARGET RANGE: 1450
+ANGLE: 45°
+SPEED: 1000
+CAST TIME: 0.25
+COST: 60 / 70 / 80 / 90 / 100 MANA
+COOLDOWN: 6
+Twisted Fate Wild Cards.png
+ACTIVE: Twisted Fate unleashes three cards in a cone in the target direction, dealing magic damage to all enemies they pass through.
+
+MAGIC DAMAGE:
+60 / 105 / 150 / 195 / 240 (+ 65% AP)
+Enemies can only be damaged once by Wild Cards.","Edit
+Pick a Card
+EFFECT RADIUS: 100
+SPEED: 1500
+CAST TIME: NONE
+COST: 40 / 55 / 70 / 85 / 100 MANA
+COOLDOWN: 8 / 7.5 / 7 / 6.5 / 6
+Twisted Fate Pick a Card.png
+ACTIVE: Twisted Fate cycles through Twisted Fate Blue Card.pngTwisted Fate Red Card.pngTwisted Fate Gold Card.png three cards for 6 seconds, hovering each for 0.5 seconds at a time. Pick a Card can be recast for the duration, and doing so chooses the current card hovered, empowering Twisted Fate's next basic attack within 6 seconds to have a 0.25-second cast time, deal modified magic damage, and apply an additional effect based on the card selected. This attack applies both On-hit icon.png on-hit and spell effects, but cannot Critical strike icon.png critically strike.
+
+Twisted Fate Blue Card.png
+RECAST - Blue Card BLUE CARD: Restores Mana icon.png mana.
+
+MAGIC DAMAGE:
+40 / 60 / 80 / 100 / 120 (+ 100% AD) (+ 90% AP)
+MANA RESTORED:
+50 / 75 / 100 / 125 / 150
+Twisted Fate Red Card.png
+RECAST - Red Card RED CARD: Deals magic damage to all enemies around the target and Slow icon.png slows them for 2.5 seconds.
+
+MAGIC DAMAGE:
+30 / 45 / 60 / 75 / 90 (+ 100% AD) (+ 60% AP)
+SLOW:
+30 / 35 / 40 / 45 / 50%
+Twisted Fate Gold Card.png
+RECAST - Gold Card GOLD CARD: Stun icon.png Stuns the target.
+
+MAGIC DAMAGE:
+15 / 22.5 / 30 / 37.5 / 45 (+ 100% AD) (+ 50% AP)
+STUN DURATION:
+1 / 1.25 / 1.5 / 1.75 / 2
+Pick a Card's recast can be used while affected by Silence icon.png cast-inhibiting crowd control.","Edit
+Stacked Deck
+PASSIVE: Twisted Fate gains Attack speed icon.png bonus attack speed.
+
+BONUS ATTACK SPEED:
+20 / 25 / 30 / 35 / 40%
+Twisted Fate Stacked Deck.png
+Twisted Fate also gains a stack of Stacked Deck from basic attacks On-hit icon.png on-hit, stacking up to 3 times.
+
+At 3 stacks, his next basic attack On-hit icon.png on-hit consumes all stacks to deal bonus magic damage.
+
+BONUS MAGIC DAMAGE:
+65 / 90 / 115 / 140 / 165 (+ 50% AP)","Edit
+Destiny
+TARGET RANGE: 5500
+EFFECT RADIUS: GLOBAL
+CAST TIME: NONE
+COST: 100 MANA
+COOLDOWN: 180 / 150 / 120
+Twisted Fate Destiny.png
+ACTIVE: Twisted Fate summons an eyeball above each and all targetable enemy Champion icon.png champions for a few seconds, True Sight icon.png revealing them for the duration. Destiny can be recast after 0.5 seconds for its duration.
+
+DURATION:
+6 / 8 / 10
+Twisted Fate Gate.png
+RECAST: Twisted Fate Channeling icon.png channels for 1.5 seconds, then Flash.png blinks to the target location upon completion, Bullet strikethrough.png destroying all Projectile.png projectiles targeting him in the process."
+9,9,"Edit
+Center of the Universe
+EFFECT RADIUS: 325
+COOLDOWN: 1
+OUTER LIMIT: 650
+Aurelion Sol Center of the Universe.png
+INNATE: Aurelion Sol is constantly orbited by three Stars, each doing a full circumference in 5.25 seconds, and beyond them exists an Outer Limit affecting his damaging abilities.
+
+Each Star deals 12 − 120 (based on level) (+ 5 / 10 / 15 / 20 / 25 (based on Aurelion Sol Celestial Expansion.png Celestial Expansion's Rank) (+ 25% AP) magic damage to enemies that come into contact with them as well as executes enemy Minion icon.png minions that have less than Health icon.png 25 health, including if they are brought to or below that threshold.","Edit
+Starsurge
+EFFECT RADIUS: 75 - ∞
+SPEED: 850 − 600 (BASED ON DURATION)
+CAST TIME: NONE
+COST: 60 / 70 / 80 / 90 / 100 MANA
+COOLDOWN: 12 / 11 / 10 / 9 / 8
+Aurelion Sol Starsurge.png
+ACTIVE: Aurelion Sol fires a star in the target direction that expands as long as it remains within the Outer Limit, which grants him Movement speed icon.png 20% bonus movement speed while active. If he moves faster than the star, the speed of the star will increase to keep up.
+
+Starsurge can be recast after 0.25 seconds while the star is active, and does so automatically when the star travels beyond the Outer Limit.
+
+Aurelion Sol Starsurge 2.png
+RECAST: The star detonates, dealing magic damage to nearby enemies and Stun icon.png stunning them for a duration, this duration increased by 0% − 300% (based on time traveled).
+
+MAGIC DAMAGE:
+70 / 110 / 150 / 190 / 230 (+ 65% AP)
+MINIMUM STUN DURATION:»
+0.55 / 0.6 / 0.65 / 0.7 / 0.75","Edit
+Celestial Expansion
+CAST TIME: NONE
+COST: 70 / 80 / 90 / 100 / 110 MANA
+COOLDOWN: 8 / 6.5 / 5 / 3.5 / 2
+PASSIVE: The Center of the Universe's Center of the Universe's base damage is increased.
+
+BONUS DAMAGE:
+5 / 10 / 15 / 20 / 25
+Aurelion Sol Celestial Expansion.png
+ACTIVE: Aurelion Sol expands his Stars Stars to the Outer Limit for 3 seconds, rotating them at a high but decaying speed, and increasing their total damage by 40%.
+
+TOTAL DAMAGE:
+16.8 − 168 (based on level) (+ 7 / 14 / 21 / 28 / 35) (+ 35% AP)
+Celestial Expansion can be recast after 1 second within the duration, and does so automatically after the duration or casting Comet of Legend Comet of Legend.
+
+Aurelion Sol Celestial Expansion 2.png
+RECAST: Aurelion Sol commands the stars to retract, granting him 40% bonus movement speed that decays over 1.5 seconds.","Edit
+Comet of Legend
+RANGE: 5500 / 6000 / 6500 / 7000 / 7500
+SPEED: 600 / 650 / 700 / 750 / 800
+CAST TIME: NONE
+COST: 60 MANA
+COOLDOWN: 80 / 75 / 70 / 65 / 60
+Aurelion Sol Comet of Legend.png
+ACTIVE: Aurelion Sol pulls in his stars stars and takes flight, Dash.png dashing in the target direction. While in flight, Aurelion Sol has Stealth Ward icon.png unobstructed vision and sets his movement speed to a static amount.
+
+STATIC MOVEMENT SPEED:
+600 / 650 / 700 / 750 / 800
+Aurelion Sol will be Knockdown icon.png knocked down by any Stun icon.png immobilizing crowd control during the dash.
+
+Comet of Legend can be recast after 1.5 seconds during flight, and automatically does so at maximum range or upon taking damage from enemy Champion icon.png champions or Turret icon.png turrets.
+
+Aurelion Sol Comet of Legend 2.png
+RECAST: Aurelion Sol ends Comet of Legend early.
+
+If damage is taken while Comet of Legend is not active, it is placed on a 4-second Cooldown reduction icon.png static cooldown. Aurelion Sol will be Sight icon.png revealed while he is inside terrain and is in the line of sight of nearby enemies","Voice of Light
+TARGET RANGE: 1500
+WIDTH: Range model.png 240
+SPEED: 4500
+CAST TIME: 0.35
+COST: 100 MANA
+COOLDOWN: 110 / 90 / 70
+Aurelion Sol Voice of Light.png
+ACTIVE: Aurelion Sol exhales a wave of star fire in the target direction, granting Sight icon.png sight of the area for 2 seconds from the start of the cast time, dealing magic damage to enemies within its path, Slow icon.png slowing them for 2 seconds and, if they are within the Outer Limit, Stun icon.png stunning them for 0.125 seconds and Airborne icon.png knocking them back to it.
+
+MAGIC DAMAGE:
+150 / 250 / 350 (+ 70% AP)
+SLOW:
+40 / 50 / 60%
+Aurelion Sol Channeling icon.png channels over 0.3 seconds until the star fire reaches maximum range. Voice of Light cannot be Silence icon.png interrupted by Stun icon.png crowd control.
+
+Celestial Expansion Celestial Expansion can be cast during Voice of Light."
+10,10,"League of Draven
+Draven League of Draven.png
+INNATE: When Draven catches a Spinning Axe Spinning Axe, kills a non-champion, or destroys a Turret icon.png turret, he gains a stack of Adoration.
+
+In addition, killing a Minion icon.png minion or destroying a Ward icon.png ward or Teemo Noxious Trap.png trap grants a Draven Whirling Death.png Strike stack for 10 seconds, stacking up to 6 times. If he drops an axe axe or a nearby Minion icon.png minion dies without Draven killing it he loses all Strike stacks. At 6 stacks, he consumes all of his Strike stacks and gains 2 Adoration stacks.
+
+When Draven kills an enemy Champion icon.png champion, he consumes all of his Adoration stacks and gains 25 + (2 × stacks) bonus gold Gold 25 + (2 × stacks) bonus gold.
+
+Draven loses 75% of his Adoration stacks upon death.","Edit
+Spinning Axe
+CAST TIME: NONE
+COST: 45 MANA
+COOLDOWN: 12 / 11 / 10 / 9 / 8
+Draven Spinning Axe.png
+ACTIVE: Draven starts spinning his axe, causing his next basic attack within 5.8 seconds to deal bonus physical damage.
+
+BONUS PHYSICAL DAMAGE:
+40 / 45 / 50 / 55 / 60 (+ 70 / 80 / 90 / 100 / 110% bonus AD)
+Draven Axe Indicator.png
+The axe ricochets off the target high up into the air, landing 2 seconds later at a location determined by Draven's current movement. If Draven catches an axe, Spinning Axe is reapplied for no additional cost on his next basic attack.
+
+Draven can hold up to two Spinning Axes in his hands at once.","Blood Rush
+CAST TIME: NONE
+COST: 40 / 35 / 30 / 25 / 20 MANA
+COOLDOWN: 12
+Draven Blood Rush.png
+ACTIVE: Draven enters an adrenaline rush, gaining Attack speed icon.png bonus attack speed for 3 seconds, Movement speed icon.png bonus movement speed for 1.5 seconds that decays over the duration, and Ghost.png ghosting for 1.5 seconds.
+
+BONUS ATTACK SPEED:
+20 / 25 / 30 / 35 / 40%
+BONUS MOVEMENT SPEED:
+50 / 55 / 60 / 65 / 70%
+Catching a Spinning Axe Spinning Axe Cooldown reduction icon.png resets Blood Rush's cooldown.","Edit
+Stand Aside
+TARGET RANGE: Range center.png 1100
+WIDTH: Range model.png 260
+SPEED: 1400
+CAST TIME: 0.25
+COST: 70 MANA
+COOLDOWN: 18 / 17 / 16 / 15 / 14
+Draven Stand Aside.png
+ACTIVE: Draven throws a fan of axes in a line in the target direction, dealing physical damage to enemies hit, Airborne icon.png knocking them aside and Slow icon.png slowing them for 2 seconds.
+
+PHYSICAL DAMAGE:
+75 / 110 / 145 / 180 / 215 (+ 50% bonus AD)
+SLOW:
+20 / 25 / 30 / 35 / 40%","Whirling Death
+TARGET RANGE: GLOBAL
+WIDTH: Range model.png 320
+SPEED: 2000
+CAST TIME: 0.5
+COST: 100 MANA
+COOLDOWN: 100 / 90 / 80
+Draven Whirling Death.png
+ACTIVE: Draven hurls two massive axes in the target direction, briefly granting Sight icon.png sight of the area along their path and dealing physical damage to enemies hit, as well as Pyke Death from Below.png executing enemy champions with Health icon.png health that is less than or is left below the current number of League of Draven League of Draven stacks. Whirling Death can be recast after 1 second while the axes are traveling, and does so automatically after the axes hit an enemy Champion icon.png champion or the edge of the map.
+
+PHYSICAL DAMAGE:»
+175 / 275 / 375 (+ 110 / 130 / 150% bonus AD)
+Draven Whirling Death 2.png
+RECAST: Draven reverses the direction of the axes, causing them to slowly come to a stop before homing back to him, dealing the same damage to enemies hit along the way back.
+
+Whirling Death Minimap.png
+Whirling Death deals 100% − 40% (based on enemies hit) damage, resetting upon reversing direction.
+
+MINIMUM PHYSICAL DAMAGE:»
+70 / 110 / 150 (+ 44 / 52 / 60% bonus AD)"
+11,11,"Headshot
+SPEED: 3000
+Caitlyn Headshot.png
+INNATE: Caitlyn's basic attacks generate a stack of Headshot Lulu Pix, Faerie Companion.png on-attack, doubled when attacking from Ivern Brushmaker.png brush. At 6 stacks, or 5 while in brush, Caitlyn's next basic attack has an Vi Relentless Force 2.png uncancelable windup and deals (50 / 75 / 100% (based on level) + (109.375% + 21.875% 21.875%) critical strike chance) AD bonus physical damage, increased to (100% + (109.375% + 21.875% 21.875%) critical strike chance) AD against non-champions.
+
+Caitlyn may fire more than one empowered basic attack until Headshot hits a target, which consumes all stacks.
+
+Headshot 2.png
+Enemies that step over a Yordle Snap Trap Yordle Snap Trap or are hit by 90 Caliber Net 90 Caliber Net can grant an additional headshot against them at Range icon.png 1300 range for 1.8 seconds, without consuming stacks of Headshot. Basic attacks that use granted Headshots have a 0.25-second cast time.","Piltover Peacemaker
+RANGE: Range center.png 1300 / Range model.png 1240
+WIDTH: Range model.png 120 / 180
+SPEED: 2200
+CAST TIME: 0.625
+COST: 50 / 60 / 70 / 80 / 90 MANA
+COOLDOWN: 10 / 9 / 8 / 7 / 6
+Caitlyn Piltover Peacemaker.png
+ACTIVE: Caitlyn fires a piercing shot in the target direction that deals physical damage to the first enemy it passes through, after which it expands in width but deals only 60% damage to enemies it passes thereafter.
+
+PHYSICAL DAMAGE:»
+50 / 90 / 130 / 170 / 210 (+ 130 / 145 / 160 / 175 / 190% AD)
+Enemies True Sight icon.png revealed by Yordle Snap Trap Yordle Snap Trap always take Critical strike physical icon.png full damage from Piltover Peacemaker.","Yordle Snap Trap
+TARGET RANGE: 800
+COLLISION RADIUS: Range model.png 15
+CAST TIME: 0.25
+COST: 20 MANA + 1 CHARGE
+COOLDOWN: 0.5
+RECHARGE: 30 / 24 / 19 / 15 / 12
+PASSIVE: Caitlyn periodically stocks a Yordle Snap Trap charge, up to a maximum amount.
+
+MAXIMUM TRAPS:
+3 / 3 / 4 / 4 / 5
+Caitlyn Yordle Snap Trap.png
+ACTIVE: Caitlyn sets a visible Fizz Playful.png untargetable trap at the target location which grants Sight icon.png sight of the area for 1 second and arms after 1 second, lasting for a duration. After the maximum amount of traps is laid down, deploying another immediately destroys the oldest one.
+
+TRAP DURATION IN SECONDS:
+30 / 35 / 40 / 45 / 50
+The next enemy champion that springs the trap is Root icon.png rooted for 1.5 seconds, True Sight icon.png revealed for 3 seconds, takes additional damage from Headshot Headshot, and becomes immune to further Yordle Snap Traps for 3 seconds.
+
+Headshot HEADSHOT DAMAGE INCREASE:
+60 / 105 / 150 / 195 / 240 (+ 40 / 55 / 70 / 85 / 100% bonus AD)
+Yordle Snap Traps trigger simultaneously if stacked on top of each other, granting additional Headshots Headshots for each one beyond the first, but only increasing the damage for the first one.","Edit
+90 Caliber Net
+RANGE: Range center.png 800 / Range model.png 740
+EFFECT RADIUS: Range model.png 140
+SPEED: 1600
+CAST TIME: 0.15
+COST: 75 MANA
+COOLDOWN: 16 / 14.5 / 13 / 11.5 / 10
+Caitlyn 90 Caliber Net.png
+ACTIVE: Caitlyn fires a net in the target direction and Dash.png recoils 390 units in the opposite direction. The net deals magic damage to the first enemy hit and Slow icon.png slows them by 50% for 1 second.
+
+MAGIC DAMAGE:
+70 / 110 / 150 / 190 / 230 (+ 80% AP)
+Caitlyn will not dash backwards if she is Stun icon.png immobilized or Grounded icon.png grounded during the cast time.
+
+Caitlyn can cast any of her abilities while Dash.png dashing.","Edit
+Ace in the Hole
+TARGET RANGE: Range center.png 3500
+WIDTH: Range model.png 80
+SPEED: 3200
+CAST TIME: 0.375
+COST: 100 MANA
+COOLDOWN: 90 / 75 / 60
+Caitlyn Ace in the Hole.png
+ACTIVE: Caitlyn locks onto the target enemy champion and Channeling icon.png channels for 1 second, True Sight icon.png revealing them for 2.75 seconds and Sight icon.png revealing herself in the process from the start of the cast time.
+
+Ace in the Hole is placed on a 5-second Cooldown reduction icon.png cooldown if canceled.
+
+Once Caitlyn completes the channel, she fires a homing bullet toward the target that deals physical damage to the first enemy champion it hits.
+
+PHYSICAL DAMAGE:
+300 / 525 / 750 (+ 200% bonus AD)"
+12,12,"Lightslinger
+Lucian Lightslinger.png
+INNATE: After casting an ability, Lucian's next basic attack Lulu Pix, Faerie Companion.png on-attack within 3.5 seconds fires an additional shot after 0.25 seconds, which deals 50 / 55 / 60% (based on level) AD physical damage, increased to 100% AD against Minion icon.png minions.
+
+The second shot applies On-hit icon.png on-hit and Lulu Pix, Faerie Companion.png on-attack effects at 100% effectiveness and is affected by Critical strike icon.png critical strike modifiers.
+
+If Lucian's primary target is killed before the second shot can go off, he automatically shoots another enemy in range.
+
+INNATE - VIGILANCE: Whenever Lucian is Heal power icon.png healed, Hybrid resistances icon.png shielded or granted a buff by an ally, his next two shots within 6 seconds are empowered to deal 14 (+ 10% AD) bonus magic damage On-hit icon.png on-hit. The empowered shots can stack up to 4 times and applies against structures.","Piercing Light
+TARGET RANGE: Range model.png 500
+RANGE: Range model.png 1000
+WIDTH: Range model.png 120
+CAST TIME: 0.4 − 0.25 (BASED ON LEVEL)
+COST: 50 / 60 / 70 / 80 / 90 MANA
+COOLDOWN: 9 / 8 / 7 / 6 / 5
+Lucian Piercing Light.png
+ACTIVE: Lucian fires a laser in a line in the direction of the target enemy, dealing physical damage to all enemies within.
+
+PHYSICAL DAMAGE:
+95 / 130 / 165 / 200 / 235 (+ 60 / 75 / 90 / 105 / 120% bonus AD)","Ardent Blaze
+RANGE: Range center.png 900
+WIDTH: Range model.png 110 / X / X
+SPEED: 1600
+CAST TIME: 0.25
+COST: 60 MANA
+COOLDOWN: 14 / 13 / 12 / 11 / 10
+Lucian Ardent Blaze.png
+ACTIVE: Lucian fires a shot in the target direction that explodes in a cross pattern upon hitting an enemy or reaching the end of its path, dealing magic damage to enemies struck and granting Sight icon.png sight of the area for 1 second.
+
+MAGIC DAMAGE:
+75 / 110 / 145 / 180 / 215 (+ 90% AP)
+Lucian Ardent Blaze 2.png
+Enemies hit are marked for 6 seconds.
+
+Lucian Ardent Blaze 3.png
+Lucian gains Movement speed icon.png bonus movement speed for 1 second if he or allied champions damage a marked target. Allied champions triggering this effect grant Lucian Vigilance Vigilance.
+
+BONUS MOVEMENT SPEED:
+60 / 65 / 70 / 75 / 80","Edit
+Relentless Pursuit
+TARGET RANGE: 425 / 200
+SPEED: 1350
+CAST TIME: NONE
+COST: 40 / 30 / 20 / 10 / 0 MANA
+COOLDOWN: 22 / 20 / 18 / 16 / 14
+PASSIVE: Relentless Pursuit's Cooldown reduction icon.png cooldown is reduced by 1 second for each Lightslinger Lightslinger shot landed, doubled to 2 seconds against enemy champions.
+
+Lucian Relentless Pursuit.png
+ACTIVE: Lucian Dash.png dashes in the target direction.
+
+Relentless Pursuit Fiora Bladework.png resets Lucian's basic attack timer and can be cast during The Culling The Culling and other abilities can be cast during Relentless Pursuit.","The Culling
+RANGE: Range center.png 1200 / Range model.png 1140 (PLUS OFFSET)
+WIDTH: Range model.png 220 (PLUS OFFSET)
+CAST TIME: NONE
+COST: 100 MANA
+COOLDOWN: 110 / 100 / 90
+Lucian The Culling.png
+ACTIVE: Lucian Channeling icon.png channels for up to 3 seconds, rapidly firing up to 22 (+ 1 per 4% critical strike chance) shots in the target direction. Each shot deals physical damage to the first enemy hit, doubled against Minion icon.png minions. The Culling can be recast after 0.75 seconds during the channel, and does so automatically when the channel ends.
+
+PHYSICAL DAMAGE PER SHOT:
+15 / 30 / 45 (+ 25% AD) (+ 15% AP)
+MINION DAMAGE PER SHOT:
+30 / 60 / 90 (+ 50% AD) (+ 30% AP)
+While channeling, Lucian is Ghost.png ghosted and may still move and cast Relentless Pursuit Relentless Pursuit.
+
+RECAST: Lucian ends The Culling."
+13,13,"Edit
+Mana Barrier
+STATIC COOLDOWN: 90
+Blitzcrank Mana Barrier.png
+INNATE: Periodically, when Blitzcrank is damaged to Health icon.png 30% maximum health, a Hybrid resistances icon.png shield is first generated that is equal to Mana icon.png 30% of maximum mana, lasting up to 10 seconds.","Rocket Grab
+RANGE: Range center.png 1115 / Range model.png 1020
+WIDTH: Range model.png 140
+SPEED: 1800 / 1800
+CAST TIME: 0.25
+COST: 100 MANA
+COOLDOWN: 20 / 19 / 18 / 17 / 16
+Blitzcrank Rocket Grab.png
+ACTIVE: Blitzcrank fires the right hand in the target direction that catches the first enemy hit, dealing them magic damage, Stun icon.png stunning them for 0.65 seconds, and Airborne icon.png pulling them towards Blitzcrank, during which they are Reveal icon.png revealed.
+
+MAGIC DAMAGE:
+90 / 140 / 190 / 240 / 290 (+ 120% AP)
+Blitzcrank is unable to move or attack while Rocket Grab is in flight.","Overdrive
+CAST TIME: NONE
+COST: 75 MANA
+COOLDOWN: 15
+Blitzcrank Overdrive.png
+ACTIVE: Blitzcrank shifts into overdrive, gaining Attack speed icon.png bonus attack speed for 5 seconds and Movement speed icon.png bonus movement speed that decays to 10% over the first 2.5 seconds.
+
+ATTACK SPEED:
+30 / 38 / 46 / 54 / 62%
+MOVEMENT SPEED:
+70 / 75 / 80 / 85 / 90%
+When Overdrive ends, Blitzcrank is Slow icon.png slowed by 30% for 1.5 seconds.","Edit
+Power Fist
+CAST TIME: NONE
+COST: 25 MANA
+COOLDOWN: 9 / 8 / 7 / 6 / 5
+Blitzcrank Power Fist.png
+ACTIVE: Blitzcrank's next basic attack within 5 seconds has an Vi Relentless Force 2.png uncancelable windup, deals 100% AD bonus physical damage and Airborne icon.png knocks up the target for 1 second.
+
+Power Fist Fiora Bladework.png resets Blitzcrank's basic attack timer.","Edit
+Static Field
+EFFECT RADIUS: Range center.png 600
+CAST TIME: 0.25
+COST: 100 MANA
+COOLDOWN: 60 / 40 / 20
+PASSIVE: While Static Field is not on cooldown, Blitzcrank's basic attacks on-hit apply a stack, stacking up to 3 times. After every 1 second, 1 stack is consumed to deal magic damage.
+
+BOLT MAGIC DAMAGE:
+50 / 100 / 150 (+ 30% AP)
+Blitzcrank Static Field.png
+ACTIVE: Blitzcrank detonates a static field, completely destroying damage-mitigating Hybrid resistances icon.png shields of nearby enemies before dealing them magic damage and Silence icon.png silencing them for 0.5 seconds.
+
+DETONATION MAGIC DAMAGE:
+250 / 375 / 500 (+ 100% AP)"
+14,14,"Edit
+Damnation
+EFFECT RADIUS: 1900
+Thresh Damnation.png
+INNATE: Enemy Champion icon.png champions, large Minion icon.png minions and large Monster icon.png monsters that die near Thresh drop a Soul for 8 seconds. Epic monsters drop 2 Souls instead. Small minions and lesser monsters have a 33.33% chance to drop a Soul.
+
+Thresh autonomously collects Souls near him or a placed Dark Passage Dark Passage.
+
+Each collected Soul grants Thresh Ability power icon.png 0.75 ability power and Armor icon.png 0.75 bonus armor.","Edit
+Death Sentence
+RANGE: Range center.png 1100 / Range model.png 1040
+EFFECT RADIUS: GLOBAL / 3000
+WIDTH: Range model.png 140
+SPEED: 1900
+CAST TIME: 0.5
+COST: 70 MANA
+COOLDOWN: 20 / 18 / 16 / 14 / 12
+Thresh Death Sentence.png
+ACTIVE: Thresh throws out his scythe in the target direction, becoming unable to move or attack while it is in flight.
+
+The scythe catches the first enemy it hits, dealing them magic damage, Stun icon.png stunning them for 1.5 seconds, and hooking the target for 1.5 seconds, during which the target is True Sight icon.png revealed and Thresh is unable to declare basic attacks. Hitting an enemy reduces the Cooldown reduction icon.png cooldown of Death Sentence by 3 seconds and Slow icon.png slows Thresh by 20% for 1 second.
+
+MAGIC DAMAGE:
+80 / 120 / 160 / 200 / 240 (+ 50% AP)
+While the target is Stun icon.png stunned, Thresh tugs at his scythe's chain twice over 0.8 seconds, Airborne icon.png pulling the target a short distance towards himself with each tug. After 0.5 seconds of hitting an enemy or instantly after hitting a Minion icon.png minion or Monster icon.png monster, Thresh can recast the ability to cast Deathly Leap while the target is hooked, doing so will cause him to stop tugging.
+
+Thresh Deathly Leap.png
+RECAST: Thresh Dash.png dashes to the hooked enemy within range, becoming able to attack again upon arrival. Thresh can cast Dark Passage Dark Passage and Flay Flay during the dash.","Dark Passage
+TARGET RANGE: 950
+EFFECT RADIUS: Range center.png 350 / 150
+TETHER RADIUS: 1500
+CAST TIME: NONE
+COST: 50 / 55 / 60 / 65 / 70 MANA
+COOLDOWN: 22 / 20.5 / 19 / 17.5 / 16
+Thresh Dark Passage.png
+ACTIVE: Thresh throws his lantern to the target location which lands after 0.5 seconds, lasting for 6 seconds or until he moves too far away from it, granting Sight icon.png sight of its surroundings.
+
+Thresh and the first allied champion to come near the lantern are granted a Hybrid resistances icon.png shield for 4 seconds. An ally can select the lantern while in proximity of it, Dash.png dashing to Thresh and gaining the shield.
+
+SHIELD STRENGTH:
+60 / 90 / 120 / 150 / 180 (+ 1 per Soul Soul collected)
+An ally cannot select the lantern while Stun icon.png immobilized, Grounded icon.png grounded, or Silence icon.png silenced. The lantern will not expire from Thresh moving too far away if he is dashing with Deathly Leap Deathly Leap.","Edit
+Flay
+RANGE: Range center.png 537.5 / 537.5
+EFFECT RADIUS: Range center.png 270
+WIDTH: Range model.png 220
+SPEED: 2000
+CAST TIME: 0.3889
+COST: 60 / 65 / 70 / 75 / 80 MANA
+COOLDOWN: 13 / 12.25 / 11.5 / 10.75 / 10
+Thresh Flay.gif
+PASSIVE: Thresh's basic attacks deal bonus magic damage, with the Attack damage icon.png AD ratio increasing based on the time spent not basic attacking enemies, up to 10 seconds.
+
+MINIMUM BONUS MAGIC DAMAGE:
+1.5 per Soul Soul collected (+ 0% AD)
+MAXIMUM BONUS MAGIC DAMAGE:
+1.5 per Soul Soul collected (+ 80 / 110 / 140 / 170 / 200% AD)
+Thresh Flay.png
+ACTIVE: Thresh sweeps his chain across the ground in a broad line, starting behind him and towards the target direction, and affecting a radius around him when the chain passes through. Enemies struck are dealt magic damage, Airborne icon.png knocked 200 units toward the chain's direction, and, upon landing, Slow icon.png slowed for 1 second.
+
+MAGIC DAMAGE:
+65 / 95 / 125 / 155 / 185 (+ 40% AP)
+SLOW:
+20 / 25 / 30 / 35 / 40%","The Box
+WIDTH: Range model.png 30
+CAST TIME: 0.45
+COST: 100 MANA
+COOLDOWN: 140 / 120 / 100
+SIDE LENGTH: Range model.png 470
+Thresh The Box.png
+ACTIVE: Thresh surrounds his location with a pentagon of spectral walls, each one lasting for up to 5 seconds. Walls break upon contact with an enemy champion, dealing them magic damage and Slow icon.png slowing them by 99% for 2 seconds.
+
+MAGIC DAMAGE:
+250 / 400 / 550 (+ 100% AP)
+Enemy champions breaking any wall beyond the first take no damage and are Slow icon.png slowed for only 1 second.
+
+Targets are immune to breaking a new wall for 1 second after breaking one."
+15,15,"Staggering Blow
+TARGET IMMUNITY: 6
+Nautilus Staggering Blow.png
+INNATE: Nautilus' basic attacks deal 8 − 110 (based on level) bonus physical damage and Root icon.png root the target for 0.75 − 1.5 (based on level) seconds.
+
+This effect cannot occur on the same target more than once every few seconds.","Dredge Line
+TARGET RANGE: Range model.png 1122
+WIDTH: Range model.png 180 / Range center.png 0
+SPEED: 2000
+CAST TIME: 0.25
+COST: 60 MANA
+COOLDOWN: 14 / 13 / 12 / 11 / 10
+Nautilus Dredge Line.png
+ACTIVE: Nautilus hurls his anchor forward in a line in the target direction. If it hits an enemy, it simultaneously Airborne icon.png drags them towards Nautilus while he Dash.png dashes towards them within 0.9 seconds, during which the target is Reveal icon.png revealed, and dealing them magic damage and Root icon.png rooting them for 0.1 seconds.
+
+MAGIC DAMAGE:
+70 / 115 / 160 / 205 / 250 (+ 90% AP)
+If the anchor hits terrain instead, Nautilus dashes to that location entirely and 50% of Dredge Line's Cooldown reduction icon.png cooldown and Mana icon.png mana cost are refunded.
+
+Nautilus is unable to move or attack while Dredge Line is in flight.","Edit
+Titan's Wrath
+EFFECT RADIUS: Range center.png 250
+CAST TIME: NONE
+COST: 80 MANA
+COOLDOWN: 12
+Nautilus Titan's Wrath.png
+ACTIVE: Nautilus Hybrid resistances icon.png shields himself for up to 6 seconds.
+
+SHIELD STRENGTH:
+45 / 55 / 65 / 75 / 85 (+ 9 / 10 / 11 / 12 / 13% maximum health)
+While the shield holds, Nautilus' basic attacks are empowered to afflict the target and all enemies near them with Pain of Wrath, making them suffer magic damage, half of the damage dealt immediately and the other half dealt after 1.25 seconds.
+
+BONUS MAGIC DAMAGE:
+30 / 40 / 50 / 60 / 70 (+ 40% AP)
+Titan's Wrath Fiora Bladework.png resets Nautilus' basic attack timer.","Riptide
+EFFECT RADIUS: Range center.png 0 - 350 / 215 - 465 / 350 - 590
+CAST TIME: 0.25
+COST: 50 / 60 / 70 / 80 / 90 MANA
+COOLDOWN: 7 / 6.5 / 6 / 5.5 / 5
+Nautilus Riptide.png
+ACTIVE: Nautilus creates 3 waves of explosions that radiate from him to the surrounding area over 0.561 seconds, each dealing magic damage to all enemies within and Slow icon.png slowing them by an amount that decays over 1.5 seconds. Riptide deals 150% damage against Monster icon.png monsters.
+
+MAGIC DAMAGE PER WAVE:
+55 / 85 / 115 / 145 / 175 (+ 30% AP)
+SLOW:
+30 / 35 / 40 / 45 / 50%
+Enemies hit by subsequent waves beyond the first are dealt 50% damage.
+
+ADDITIONAL MAGIC DAMAGE:»
+27.5 / 42.5 / 57.5 / 72.5 / 87.5 (+ 15% AP)","Depth Charge
+TARGET RANGE: Range center.png 825
+EFFECT RADIUS: Range center.png X / 300
+CAST TIME: 0.46
+COST: 100 MANA
+COOLDOWN: 120 / 100 / 80
+Nautilus Depth Charge.png
+ACTIVE: Nautilus sends out a Depth Charge Depth Charge that chases the target enemy Champion icon.png champion, creating eruptions from beneath along the way and upon reaching the target, granting Sight icon.png sight of the area in each one. Enemies within the eruptions are dealt magic damage, Airborne icon.png knocked up for 1 second, and Stun icon.png stunned for a duration.
+
+MAGIC DAMAGE:
+125 / 175 / 225 (+ 40% AP)
+STUN DURATION:
+1 / 1.5 / 2
+Nautilus Depth Charge 2.png
+The primary target takes increased damage, is Stun icon.png stunned for the same duration, and Airborne icon.png knocked up for a modified duration.
+
+INCREASED MAGIC DAMAGE:
+150 / 275 / 400 (+ 80% AP)
+KNOCK UP DURATION:
+1 / 1.5 / 2"
