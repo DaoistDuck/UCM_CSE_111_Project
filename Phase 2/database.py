@@ -332,5 +332,4 @@ if __name__ == '__main__':
     main()
 
 # A lot of the code is modified from the code given to us by the professor in Lecture 22 ODBC-Python SQLite.py
-# populateTable code modified from Lab 2
 # https://datatofish.com/import-csv-sql-server-python/
