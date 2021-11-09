@@ -1,0 +1,2 @@
+id    champion_id   hp            resource        healthregen     manaregen    armor      atkdmg     magicresist critdmg    movespeed   attackrange baseas     atkwindup  bonusas    gameplayradius selectionradius pathingradius acqradius 
+1     1             561 – 2091    561 – 2091      9 – 24.3        7.44 – 15.94 34 – 93.5  67 – 126.5 32 – 53.25  175%       350         125         0.638      20.14%     0 – 59.16% 80             135             50         350            

@@ -1,0 +1,57 @@
+Nasus's passive                                    Nasus's q                                          Nasus's w                                          Nasus's e                                          Nasus's r                                         
+Soul Eater
+INNATE: Nasus gains Life steal icon.png 10 / 16 / 22% (based on level) life steal. 
+
+Siphoning Strike
+CAST TIME: NONE
+COST: 20 MANA
+COOLDOWN: 7.5 / 6.5 / 5.5 / 4.5 / 3.5
+ACTIVE: Nasus' next basic attack within 10 seconds has an Vi Relentless Force 2.png uncancelable windup, gains Range icon.png 25 bonus range, and deals bonus physical damage.
+
+BONUS PHYSICAL DAMAGE:
+30 / 50 / 70 / 90 / 110 (+ Siphoning Strike stacks)
+If Siphoning Strike kills its target, Nasus permanently gains 3 stacks, increased to 12 if its target is a Champion icon.png champion, large Minion icon.png minion, or large Monster icon.png monster.
+
+Siphoning Strike Fiora Bladework.png resets Nasus' basic attack timer. Wither
+TARGET RANGE: Range center.png 700
+CAST TIME: 0.25
+COST: 80 MANA
+COOLDOWN: 15 / 14 / 13 / 12 / 11
+Nasus Wither.png
+ACTIVE: Nasus ages the target enemy champion for 5 seconds, Slow icon.png slowing them by 35% and Cripple icon.png crippling them by「 half that amount 」, both increasing over the duration.
+
+MAXIMUM SLOW:»
+47 / 59 / 71 / 83 / 95%
+MAXIMUM CRIPPLE:»
+23.5 / 29.5 / 35.5 / 41.5 / 47.5% Spirit Fire
+TARGET RANGE: 650
+EFFECT RADIUS: Range center.png 400 / Sight icon.png 200
+CAST TIME: 0.25
+COST: 70 / 85 / 100 / 115 / 130 MANA
+COOLDOWN: 12
+Nasus Spirit Fire.png
+ACTIVE: Nasus unleashes a spirit flame at the target location, Sight icon.png revealing its center for 2.5 seconds and, after a 0.264 seconds delay, dealing magic damage to all enemies within the area.
+
+MAGIC DAMAGE:
+55 / 95 / 135 / 175 / 215 (+ 60% AP)
+The flame then remains for 5 seconds, dealing magic damage each second to all enemies within the area and Armor penetration icon.png reducing their armor while they are inside, lingering for 1 second.
+
+MAGIC DAMAGE PER TICK:»
+11 / 19 / 27 / 35 / 43 (+ 12% AP)
+ARMOR REDUCTION:
+25 / 30 / 35 / 40 / 45% of target's armor Fury of the Sands
+EFFECT RADIUS: Range center.png 400
+CAST TIME: 0.2
+COST: 100 MANA
+COOLDOWN: 120
+Nasus Fury of the Sands.png
+ACTIVE: Nasus empowers himself for 15 seconds, gaining Health icon.png bonus health, Armor icon.png bonus armor, Magic resistance icon.png bonus magic resistance, 30% increased size, and Range icon.png 50 bonus attack range for the duration.
+
+BONUS HEALTH:
+300 / 450 / 600
+BONUS RESISTANCES:
+40 / 55 / 70
+While Nasus is empowered, he deals magic damage to nearby enemies each second, capped at 240 per second, and Siphoning Strike's Siphoning Strike's Cooldown reduction icon.png cooldown is halved.
+
+MAGIC DAMAGE PER TICK:»
+3 / 4 / 5% (+ 1% per 100 AP) of target's maximum health
