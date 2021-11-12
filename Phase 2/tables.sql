@@ -10,5 +10,10 @@
 --     championstats.id INTEGER NOT NULL
 -- );
 
-select lore.description
-from lore
+-- select lore.description
+-- from lore;
+
+SELECT championSkins.name
+FROM champion, championSkins
+WHERE champion.id = championSkins.champion_id
+AND champion.name = 'Nasus';

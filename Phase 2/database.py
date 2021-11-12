@@ -208,7 +208,6 @@ def populateTables(_conn):
         champion = pandas.read_csv(r'data/champion.csv')
         championdf = pandas.DataFrame(champion)
         for row in championdf.itertuples():
-            print(row)
             sql = """INSERT INTO champion VALUES(?,?,?,?,?,?,?)
                     """
             args = [row.id, row.name, row.price,
@@ -438,7 +437,6 @@ def Q4(_conn):
 
     input = open("input/4.in", "r")
     dataList = input.read().splitlines()
-    print(dataList)
 
     try:
         sql = """INSERT INTO items VALUES(?,?,?)"""
@@ -447,6 +445,13 @@ def Q4(_conn):
         args3 = [dataList[6], dataList[7], dataList[8]]
         args4 = [dataList[9], dataList[10], dataList[11]]
         args5 = [dataList[12], dataList[13], dataList[14]]
+        args6 = [dataList[15], dataList[16], dataList[17]]
+        args7 = [dataList[18], dataList[19], dataList[20]]
+        args8 = [dataList[21], dataList[22], dataList[23]]
+        args9 = [dataList[24], dataList[25], dataList[26]]
+        args10 = [dataList[27], dataList[28], dataList[29]]
+        args11 = [dataList[30], dataList[31], dataList[32]]
+        args12 = [dataList[33], dataList[34], dataList[35]]
 
         cursor = _conn.cursor()
         cursor.execute(sql, args)
@@ -454,9 +459,18 @@ def Q4(_conn):
         cursor.execute(sql, args3)
         cursor.execute(sql, args4)
         cursor.execute(sql, args5)
+        cursor.execute(sql, args6)
+        cursor.execute(sql, args7)
+        cursor.execute(sql, args8)
+        cursor.execute(sql, args9)
+        cursor.execute(sql, args10)
+        cursor.execute(sql, args11)
+        cursor.execute(sql, args12)
 
         header = "This query is just inserting new items into the table"
         Q4Write.write(header + '\n')
+        _conn.commit()
+        print("success")
 
     except Error as e:
         _conn.rollback()
@@ -474,35 +488,202 @@ def Q5(_conn):
     Q5Output = open("output/5.out", "w")
     Q5Write = open("output/5.out", "w")
 
-    #input = open("input/5.in", "r")
+    input = open("input/5.in", "r")
+    dataList = input.read().splitlines()
 
-    try:  # we are trying to populate champItems table with the new items that we just inserted without making 8 queries
-        sql = """SELECT champion.name  
-                FROM champion, champRole, role
-                WHERE champion.id = champRole.champion_id
-                AND role.id = champRole.role_id
-                AND role.role_name = "Top"
-                AND champion.dmgType = "ad"
-            ;"""
+    try:
+        sql = """INSERT INTO champItems VALUES(?,?,?)"""
+        args = [dataList[0], dataList[1], dataList[2]]
+        args2 = [dataList[3], dataList[4], dataList[5]]
+        args3 = [dataList[6], dataList[7], dataList[8]]
+        args4 = [dataList[9], dataList[10], dataList[11]]
+        args5 = [dataList[12], dataList[13], dataList[14]]
+        args6 = [dataList[15], dataList[16], dataList[17]]
+        args7 = [dataList[18], dataList[19], dataList[20]]
+        args8 = [dataList[21], dataList[22], dataList[23]]
+        args9 = [dataList[24], dataList[25], dataList[26]]
+        args10 = [dataList[27], dataList[28], dataList[29]]
+        args11 = [dataList[30], dataList[31], dataList[32]]
+        args12 = [dataList[33], dataList[34], dataList[35]]
+        args13 = [dataList[36], dataList[37], dataList[38]]
+        args14 = [dataList[39], dataList[40], dataList[41]]
+        args15 = [dataList[42], dataList[43], dataList[44]]
 
         cursor = _conn.cursor()
-        cursor.execute(sql)
-        # header = '{:<5} {:<15} {:<20}'.format(
-        #     "id", "champion_id", "items_id")
-        # print(header)
-        # Q5Write.write(header + '\n')
-        rows = cursor.fetchall()
-        for row in rows:
-            # print(row)
-            data = '{:<5} '.format(
-                row[0])
-            print(data)
+        cursor.execute(sql, args)
+        cursor.execute(sql, args2)
+        cursor.execute(sql, args3)
+        cursor.execute(sql, args4)
+        cursor.execute(sql, args5)
+        cursor.execute(sql, args6)
+        cursor.execute(sql, args8)
+        cursor.execute(sql, args9)
+        cursor.execute(sql, args10)
+        cursor.execute(sql, args11)
+        cursor.execute(sql, args12)
+        cursor.execute(sql, args13)
+        cursor.execute(sql, args14)
+        cursor.execute(sql, args15)
+
+        header = "This query is just inserting champion and their items into the table"
+        Q5Write.write(header + '\n')
+        _conn.commit()
+        print("success")
 
     except Error as e:
         _conn.rollback()
         print(e)
 
     Q5Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q6(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q6")
+
+    Q6Output = open("output/6.out", "w")
+    Q6Write = open("output/6.out", "w")
+
+    try:  # modifying the existing movespeed of ad champs by multiplying itself by 2
+        sql = """UPDATE championStats SET movespeed = movespeed * 2
+                WHERE championStats.champion_id IN(SELECT championStats.champion_id FROM championStats, champion WHERE championStats.champion_id = champion.id AND champion.dmgType = 'ad')
+            ;"""
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+
+        header = "This query is just modifying movespeed if champion dmgType is ad"
+        Q6Write.write(header + '\n')
+        _conn.commit()
+        print("success")
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q6Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q7(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q7")
+
+    Q7Output = open("output/7.out", "w")
+    Q7Write = open("output/7.out", "w")
+
+    try:  # This query is just printing AD champion items
+        sql = """SELECT items.name
+                FROM champion, champItems, items
+                WHERE champion.id = champItems.champion_id
+                AND items.id = champItems.items_id
+                AND champion.dmgType = 'ad'
+                GROUP BY items.name
+            ;"""
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10}'.format(
+            'Items')
+        print(header)
+        Q7Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10}'.format(
+                row[0])
+            print(data)
+            Q7Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q7Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q8(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q8")
+
+    Q8Output = open("output/8.out", "w")
+    Q8Write = open("output/8.out", "w")
+
+    input = open("input/8.in", "r")
+    dataList = input.read().splitlines()
+    # Printing skins for given champion
+    try:
+        sql = """ SELECT championSkins.name
+                FROM champion, championSkins
+                WHERE champion.id = championSkins.champion_id
+                AND champion.name = '{}';""".format(dataList[0])
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10}'.format(
+            dataList[0] + ' Skins')
+        print(header)
+        Q8Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10}'.format(
+                row[0])
+            print(data)
+            Q8Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q8Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q9(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q9")
+
+    Q9Output = open("output/9.out", "w")
+    Q9Write = open("output/9.out", "w")
+
+    # input = open("input/9.in", "r")
+    # dataList = input.read().splitlines()
+
+    # Printing champions in mid lane
+    try:
+        sql = """ SELECT champion.name
+                FROM champion, role, champRole
+                WHERE champion.id = champRole.champion_id
+                AND role.id = champRole.role_id
+                AND role.role_name = "Middle"
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10}'.format(
+            "Champion")
+        print(header)
+        Q9Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10}'.format(
+                row[0])
+            print(data)
+            Q9Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q9Write.close()
 
     print("++++++++++++++++++++++++++++++++++")
 
@@ -521,8 +702,11 @@ def main():
         Q2(conn)  # This query is printing the champion stats for given champion
         Q3(conn)  # This query is printing the abilityinfo for given champion
         Q4(conn)  # This query is inserting 3 starting items for all champions
-        # This query is making the relation between champions and the 3 new items MANY-TO-MANY
-        Q5(conn)
+        Q5(conn)  # This query is inserting the champ and items relationship
+        Q6(conn)  # This query is modifying movespeed *2 for any ad champ
+        Q7(conn)  # This query is just printing AD champion items
+        Q8(conn)  # This query will print skins for champion
+        Q9(conn)  # This query will print champions that go in mid lane
 
     closeConnection(conn, database)
 
