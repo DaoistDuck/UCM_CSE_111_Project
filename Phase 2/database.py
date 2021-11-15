@@ -688,6 +688,126 @@ def Q9(_conn):
     print("++++++++++++++++++++++++++++++++++")
 
 
+def Q10(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q10")
+
+    Q10Output = open("output/10.out", "w")
+    Q10Write = open("output/10.out", "w")
+
+    # input = open("input/9.in", "r")
+    # dataList = input.read().splitlines()
+
+    # Printing champions in mid lane
+    try:
+        sql = """ DELETE FROM championSkins
+                WHERE championskins.name like "%High Noon%";
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+
+        print("this query is deleting skins with the name High Noon")
+        Q10Write.write(
+            "this query is deleting skins with the name High Noon" + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q10Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q11(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q11")
+
+    Q11Output = open("output/11.out", "w")
+    Q11Write = open("output/11.out", "w")
+
+    # input = open("input/9.in", "r")
+    # dataList = input.read().splitlines()
+
+    # Print all champions with highest price
+    try:
+        sql = """SELECT name, price
+                FROM champion
+                WHERE price == (SELECT MAX(price) FROM champion)
+                ORDER BY price DESC, name;
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10}'.format(
+            "Champion", "Price")
+        print(header)
+        Q11Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10}'.format(
+                row[0], row[1])
+            print(data)
+            Q11Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q11Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q12(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q12")
+
+    Q12Output = open("output/12.out", "w")
+    Q12Write = open("output/12.out", "w")
+
+    # input = open("input/9.in", "r")
+    # dataList = input.read().splitlines()
+
+    # Reduce price of all tank items
+    sql = """UPDATE championStats SET movespeed = movespeed * 2
+                WHERE championStats.champion_id IN(SELECT championStats.champion_id FROM championStats, champion WHERE championStats.champion_id = champion.id AND champion.dmgType = 'ad')
+            ;"""
+    try:
+        sql = """UPDATE items SET price = price - 400
+                WHERE items.name IN(SELECT items.name
+                FROM champion, items, champItems
+                WHERE champion.id = champItems.champion_id
+                AND items.id = champItems.items_id
+                AND champion.dmgType = "tank"
+                GROUP BY items.name);
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10}'.format(
+            "Champion")
+        print(header)
+        Q12Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10}'.format(
+                row[0])
+            print(data)
+            Q12Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q12Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
 def main():
     database = r"data.sqlite"
 
@@ -707,6 +827,9 @@ def main():
         Q7(conn)  # This query is just printing AD champion items
         Q8(conn)  # This query will print skins for champion
         Q9(conn)  # This query will print champions that go in mid lane
+        Q10(conn)  # This query will delete chapmions with the Highnoon skin line
+        Q11(conn)  # This query will print champions from with the highest cost
+        Q12(conn)  # This query will modify all tank items, reducing price by 400
 
     closeConnection(conn, database)
 
