@@ -123,22 +123,13 @@ def createTables(_conn):
                     acqradius VARCHAR(50) NOT NULL)"""  # GOOD
         _conn.execute(sql)
 
-        # sql = """CREATE TABLE user (
-        #             id INTEGER NOT NULL,
-        #             name VARCHAR(100) NOT NULL,
-        #             password VARCHAR(100) NOT NULL,
-        #             isAdmin INTEGER NOT NULL)"""  # GOOD
-        # _conn.execute(sql)
-
-        # sql = """CREATE TABLE userRole (
-        #             id INTEGER NOT NULL,
-        #             user_id INTEGER NOT NULL)"""  #COME BACK TO THIS AT LATER TIME
-        # _conn.execute(sql)
-
-        # sql = """CREATE TABLE role (
-        #             role_id INTEGER NOT NULL,
-        #             role_name VARCHAR(100) NOT NULL)"""  # FILL IN LATER
-        # _conn.execute(sql)
+        sql = """CREATE TABLE users (
+                    id INTEGER NOT NULL,
+                    name VARCHAR(100) NOT NULL,
+                    username VARCHAR(100) NOT NULL,
+                    password VARCHAR(100) NOT NULL,
+                    types INTEGER NOT NULL)"""  # GOOD
+        _conn.execute(sql)
 
         _conn.commit()
         print("success")
@@ -175,19 +166,13 @@ def dropTables(_conn):
         sql = "DROP TABLE abilityInfo"
         _conn.execute(sql)
 
-        # sql = "DROP TABLE user"
-        # _conn.execute(sql)
-
-        # sql = "DROP TABLE UserRole"
-        # _conn.execute(sql)
-
-        # sql = "DROP TABLE Role"
-        # _conn.execute(sql)
-
         sql = "DROP TABLE championSkins"
         _conn.execute(sql)
 
         sql = "DROP TABLE championStats"
+        _conn.execute(sql)
+
+        sql = "DROP TABLE users"
         _conn.execute(sql)
 
         _conn.commit()
@@ -304,6 +289,15 @@ def populateTables(_conn):
                     row.bonusas,
                     row.gameplayradius, row.selectionradius,
                     row.pathingradius, row.acqradius]
+            _conn.execute(sql, args)
+
+        users = pandas.read_csv(r'data/users.csv')
+        usersdf = pandas.DataFrame(users)
+        for row in usersdf.itertuples():
+
+            sql = """INSERT INTO users VALUES(?,?,?,?,?)
+                    """
+            args = [row.id, row.name, row.username, row.password, row.types]
             _conn.execute(sql, args)
 
         _conn.commit()
@@ -653,8 +647,8 @@ def Q9(_conn):
     Q9Output = open("output/9.out", "w")
     Q9Write = open("output/9.out", "w")
 
-    # input = open("input/9.in", "r")
-    # dataList = input.read().splitlines()
+    input = open("input/9.in", "r")
+    dataList = input.read().splitlines()
 
     # Printing champions in mid lane
     try:
@@ -662,8 +656,8 @@ def Q9(_conn):
                 FROM champion, role, champRole
                 WHERE champion.id = champRole.champion_id
                 AND role.id = champRole.role_id
-                AND role.role_name = "Middle"
-                """
+                AND role.role_name = "{}"
+                """.format(dataList[0])
 
         cursor = _conn.cursor()
         cursor.execute(sql)
@@ -695,9 +689,6 @@ def Q10(_conn):
     Q10Output = open("output/10.out", "w")
     Q10Write = open("output/10.out", "w")
 
-    # input = open("input/9.in", "r")
-    # dataList = input.read().splitlines()
-
     # Printing champions in mid lane
     try:
         sql = """ DELETE FROM championSkins
@@ -726,9 +717,6 @@ def Q11(_conn):
 
     Q11Output = open("output/11.out", "w")
     Q11Write = open("output/11.out", "w")
-
-    # input = open("input/9.in", "r")
-    # dataList = input.read().splitlines()
 
     # Print all champions with highest price
     try:
@@ -768,13 +756,7 @@ def Q12(_conn):
     Q12Output = open("output/12.out", "w")
     Q12Write = open("output/12.out", "w")
 
-    # input = open("input/9.in", "r")
-    # dataList = input.read().splitlines()
-
     # Reduce price of all tank items
-    sql = """UPDATE championStats SET movespeed = movespeed * 2
-                WHERE championStats.champion_id IN(SELECT championStats.champion_id FROM championStats, champion WHERE championStats.champion_id = champion.id AND champion.dmgType = 'ad')
-            ;"""
     try:
         sql = """UPDATE items SET price = price - 400
                 WHERE items.name IN(SELECT items.name
@@ -787,23 +769,257 @@ def Q12(_conn):
 
         cursor = _conn.cursor()
         cursor.execute(sql)
-        header = '{:<10}'.format(
-            "Champion")
+        header = "This query is reducing the price of all tank items by 400"
         print(header)
-        Q12Write.write(header + '\n')
-        rows = cursor.fetchall()
-        for row in rows:
-            # print(row)
-            data = '{:<10}'.format(
-                row[0])
-            print(data)
-            Q12Write.write(data + '\n')
+        Q12Write.write(
+            header + '\n')
 
     except Error as e:
         _conn.rollback()
         print(e)
 
     Q12Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q13(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q13")
+
+    Q13Output = open("output/13.out", "w")
+    Q13Write = open("output/13.out", "w")
+
+    # gets a list of all admin users
+    try:
+        sql = """SELECT users.username
+                FROM users
+                WHERe users.types = 1;
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10}'.format(
+            "Admin Users username")
+        print(header)
+        Q13Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10}'.format(
+                row[0])
+            print(data)
+            Q13Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q13Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q14(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q14")
+
+    Q14Output = open("output/14.out", "w")
+    Q14Write = open("output/14.out", "w")
+
+    try:
+        sql = """SELECT * FROM users
+                WHERE users.password IN(
+                    SELECT users.password
+                    FROM users
+                    GROUP BY users.password
+                    HAVING COUNT(*) > 1
+                );
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10}'.format(
+            "ID", "Name")
+        print(header)
+        Q14Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10}'.format(
+                row[0], row[1])
+            print(data)
+            Q14Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q14Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+# SELECT CAST(championStats.hp as INT) converts string to integer until '-'
+# SUBSTR(championStats.hp, 7, 10) grabs max hp
+# SUBSTR(championStats.hp, 1, 4) grabs min hp
+# CAST(SUBSTR(championStats.hp, 1, 4) AS INT) converts string into integer
+
+
+def Q15(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q15")
+
+    Q15Output = open("output/15.out", "w")
+    Q15Write = open("output/15.out", "w")
+
+    try:
+        sql = """
+        SELECT champion.name, MAX(CAST(SUBSTR(championStats.hp, 7,10) AS INT)) 
+        FROM championStats, champion
+        WHERE champion.id = championStats.champion_id;"""
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10}'.format(
+            "Champion", "Base Max Hp")
+        print(header)
+        Q15Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10}'.format(
+                row[0], row[1])
+            print(data)
+            Q15Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q15Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q16(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q16")
+
+    Q16Output = open("output/16.out", "w")
+    Q16Write = open("output/16.out", "w")
+
+    try:
+        input = pandas.read_csv(r'input/teemo.csv')
+        inputdf = pandas.DataFrame(input)
+        for row in inputdf.itertuples():
+            sql = """INSERT INTO champion VALUES(?,?,?,?,?,?,?)
+                    """
+            args = [row.id, row.name, row.price, row.lore_id,
+                    row.championstats_id, row.abilityinfo_id, row.dmgType]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championStats VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                    """
+            args = [row.id, row.id, row.hp, row.resource, row.healthregen, row. manaregen,
+                    row.armor, row.atkdmg, row.magicresist, row.critdmg, row.movespeed,
+                    row.attackrange, row.baseas, row.atkwindup, row.bonusas, row.gameplayradius,
+                    row.selectionradius, row.pathingradius, row.acqradius]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO champItems VALUES(?,?,?)
+                    """
+            args = [36, row.id, row.items_id1]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO champItems VALUES(?,?,?)
+                    """
+            args = [37, row.id, row.items_id2]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO champItems VALUES(?,?,?)
+                    """
+            args = [38, row.id, row.items_id3]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO champItems VALUES(?,?,?)
+                    """
+            args = [39, row.id, row.items_id4]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO lore VALUES(?,?,?)
+                    """
+            args = [row.id, row.id, row.lore_description]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO champRole VALUES(?,?,?)
+                    """
+            args = [22, row.id, row.role_id]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO abilityInfo VALUES(?,?,?,?,?,?,?)
+                    """
+            args = [row.id, row.id, row.passive, row.q, row.w,
+                    row.e, row.r]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [147, row.id, row.skin1name, row.skin1price, row.skin1chroma,
+                    row.skin1prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [148, row.id, row.skin2name, row.skin2price, row.skin2chroma,
+                    row.skin2prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [149, row.id, row.skin3name, row.skin3price, row.skin3chroma,
+                    row.skin3prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [150, row.id, row.skin4name, row.skin4price, row.skin4chroma,
+                    row.skin4prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [151, row.id, row.skin5name, row.skin5price, row.skin5chroma,
+                    row.skin5prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [152, row.id, row.skin6name, row.skin6price, row.skin6chroma,
+                    row.skin6prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [153, row.id, row.skin7name, row.skin7price, row.skin7chroma,
+                    row.skin7prestige_edition]
+            _conn.execute(sql, args)
+
+            sql = """INSERT INTO championSkins VALUES(?,?,?,?,?,?)
+                    """
+            args = [154, row.id, row.skin8name, row.skin8price, row.skin8chroma,
+                    row.skin8prestige_edition]
+            _conn.execute(sql, args)
+
+        header = "This query is just inserting Teemo"
+        Q16Write.write(header + '\n')
+        _conn.commit()
+        print("success")
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q16Write.close()
 
     print("++++++++++++++++++++++++++++++++++")
 
@@ -830,7 +1046,10 @@ def main():
         Q10(conn)  # This query will delete chapmions with the Highnoon skin line
         Q11(conn)  # This query will print champions from with the highest cost
         Q12(conn)  # This query will modify all tank items, reducing price by 400
-
+        Q13(conn)  # This query will list find all admins
+        Q14(conn)  # This query will find all users with last name Jones
+        Q15(conn)  # This query will find the max health from champions
+        Q16(conn)  # This query will add teemo
     closeConnection(conn, database)
 
 

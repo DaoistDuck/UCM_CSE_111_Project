@@ -1,0 +1,76 @@
+id,name,price,lore_id,championstats_id,abilityinfo_id,dmgType,role_id,items_id1,items_id2,items_id3,items_id4,lore_description,hp,resource,healthregen,manaregen,armor,atkdmg,magicresist,critdmg,movespeed,attackrange,baseas,atkwindup,bonusas,gameplayradius,selectionradius,pathingradius,acqradius,passive,q,w,e,r,skin1name,skin1price,skin1chroma,skin1prestige_edition,skin2name,skin2price,skin2chroma,skin2prestige_edition,skin3name,skin3price,skin3chroma,skin3prestige_edition,skin4name,skin4price,skin4chroma,skin4prestige_edition,skin5name,skin5price,skin5chroma,skin5prestige_edition,skin6name,skin6price,skin6chroma,skin6prestige_edition,skin7name,skin7price,skin7chroma,skin7prestige_edition,skin8name,skin8price,skin8chroma,skin8prestige_edition
+16,Teemo,1350,16,16,16,ap,1,12,14,18,24,"Undeterred by even the most dangerous and threatening of obstacles, Teemo Teemo scouts the world with boundless enthusiasm and a cheerful spirit. A yordle with an unwavering sense of morality, he takes pride in following the Bandle Scout's Code, sometimes with such eagerness that he is unaware of the broader consequences of his actions. Though some say the existence of the Scouts is questionable, one thing is for certain: Teemo's conviction is nothing to be trifled with.",666-6666,66-666,6-66,6-66,6-66,6-66,6-66,666%,666,666,0.666,66%,0-66%,66,666,66,666,"Guerrilla Warfare
+Teemo Guerrilla Warfare.png
+INNATE: Teemo gains Akali Twilight Shroud old2.png invisibility after 1.5 seconds of not moving, taking damage, performing actions that break stealth, Channeling icon.png channeling, and being in Stasis icon.png stasis. Teemo will remain invisible so long as he does not move or act, and is not Airborne icon.png displaced. If within Ivern Brushmaker.png brush, Teemo gains invisibility after 1.5 seconds even while moving and may do so freely within its boundaries without breaking stealth.
+
+Teemo Element of Surprise.png
+INNATE - ELEMENT OF SURPRISE: When Teemo breaks stealth, he gains the Element of Surprise for 5 seconds, granting him Attack speed icon.png 20 / 40 / 60 / 80% (based on level) bonus attack speed.","Edit
+Blinding Dart
+TARGET RANGE: Range center.png 680
+SPEED: 2500
+CAST TIME: 0.25
+COST: 70 / 75 / 80 / 85 / 90 MANA
+COOLDOWN: 7
+Teemo Blinding Dart.png
+ACTIVE: Teemo shoots a dart at the target enemy that upon arrival deals them magic damage and Blind icon.png blinds them for a few seconds.
+
+MAGIC DAMAGE:
+80 / 125 / 170 / 215 / 260 (+ 80% AP)
+BLIND DURATION:
+2 / 2.25 / 2.5 / 2.75 / 3
+The duration of the Blind icon.png blind is doubled against Minion icon.png minions and Monster icon.png monsters.
+
+INCREASED BLIND DURATION:
+4 / 4.5 / 5 / 5.5 / 6","Edit
+Move Quick
+CAST TIME: NONE
+COST: 40 MANA
+COOLDOWN: 14
+PASSIVE: Teemo gains Movement speed icon.png bonus movement speed if he hasn't taken damage from enemy Champion icon.png champions or Turret icon.png turrets for 5 seconds.
+
+PASSIVE BONUS MOVEMENT SPEED:
+10 / 14 / 18 / 22 / 26%
+Teemo Move Quick.png
+ACTIVE: Teemo doubles the bonus movement speed gained from Move Quick's passive for 3 seconds and prevents it from being lost by damage for the duration.
+
+ACTIVE BONUS MOVEMENT SPEED:
+20 / 28 / 36 / 44 / 52%
+Casting Move Quick does not break Guerrilla Warfare's Guerrilla Warfare's stealth nor reset its fade into it.","Edit
+Toxic Shot
+Teemo Toxic Shot.png
+PASSIVE: Teemo's basic attacks deal bonus magic damage On-hit icon.png on-hit and apply a toxic Poison icon.png poison for 4 seconds that deals magic damage every second over the duration. Subsequent attacks refresh the poison's duration.
+
+MAGIC DAMAGE ON-HIT:
+14 / 25 / 36 / 47 / 58 (+ 30% AP)
+DAMAGE PER TICK:»
+6 / 12 / 18 / 24 / 30 (+ 10% AP)
+Toxic Shot deals 150% damage against Monster icon.png monsters.
+
+MONSTER DAMAGE ON-HIT:
+21 / 37.5 / 54 / 70.5 / 87 (+ 45% AP)
+MONSTER DAMAGE PER TICK:»
+9 / 18 / 27 / 36 / 45 (+ 15% AP)","Edit
+Noxious Trap
+TARGET RANGE: 400 / 650 / 900
+COLLISION RADIUS: 75
+EFFECT RADIUS: 450
+CAST TIME: 0.25
+COST: 75 MANA + 1 CHARGE
+COOLDOWN: 0.25
+RECHARGE: 30 / 25 / 20
+PASSIVE: Teemo stores a Noxious Trap charge periodically, up to a maximum amount at once.
+
+MAXIMUM CHARGES:
+3 / 4 / 5
+Teemo Noxious Trap.png
+ACTIVE: Teemo tosses a poisonous mushroom at the target location which, upon landing, becomes Teemo Noxious Trap.png stealthed after arming over 1 second, lasting for up to 5 minutes and granting Sight icon.png sight of its surroundings. Noxious Trap bounces forward if it lands on top of another.
+
+BOUNCE RANGE:
+300 / 400 / 500
+The mushroom will explode upon enemy contact, Slow icon.png slowing all enemies struck by the blast for 4 seconds and Poison icon.png poisoning them for 4 seconds, which causes them to suffer magic damage every second over the duration and become Reveal icon.png revealed.
+
+MAGIC DAMAGE PER TICK:»
+50 / 81.25 / 112.5 (+ 12.5% AP)
+SLOW:
+30 / 40 / 50%
+Noxious Traps have Health icon.png 6 maximum health and can only be damaged by Champion icon.png champion basic attacks (2 damage from Ranged role.png ranged and 3 from Melee role.png melee).",Astronaut Teemo,1350,1,0,Cottontail Teemo,975,1,0,Super Teemo,975,0,0,Panda Teemo,975,0,0,Omega Squad Teemo,1820,1,0,Beemo,1350,1,0,Spirit Blossom Teemo,1350,0,1,Litle Devil Teemo,1350,1,0
