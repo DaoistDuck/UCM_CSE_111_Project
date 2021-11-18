@@ -873,10 +873,9 @@ def Q15(_conn):
     Q15Write = open("output/15.out", "w")
 
     try:
-        sql = """
-        SELECT champion.name, MAX(CAST(SUBSTR(championStats.hp, 7,10) AS INT)) 
-        FROM championStats, champion
-        WHERE champion.id = championStats.champion_id;"""
+        sql = """SELECT champion.name, MAX(CAST(SUBSTR(championStats.hp, 7,10) AS INT)) 
+                FROM championStats, champion
+                WHERE champion.id = championStats.champion_id;"""
 
         cursor = _conn.cursor()
         cursor.execute(sql)
@@ -1024,6 +1023,164 @@ def Q16(_conn):
     print("++++++++++++++++++++++++++++++++++")
 
 
+def Q17(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q17")
+
+    Q17Output = open("output/17.out", "w")
+    Q17Write = open("output/17.out", "w")
+
+    input = open("input/17.in", "r")
+    dataList = input.read().splitlines()
+
+    try:
+        sql = """SELECT champion.name, lore.description
+        FROM lore, champion
+        WHERE champion.id = lore.id
+        AND champion.name = '{}';""".format(dataList[0])
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10}'.format(
+            "Champion", "Lore")
+        print(header)
+        Q17Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10}'.format(
+                row[0], row[1])
+            print(data)
+            Q17Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q17Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q18(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q18")
+
+    Q18Output = open("output/18.out", "w")
+    Q18Write = open("output/18.out", "w")
+
+    input = open("input/18.in", "r")
+    dataList = input.read().splitlines()
+
+    try:
+        sql = """SELECT name, price, role.role_name
+                FROM champion, champRole, role
+                WHERE price == {}
+                AND champion.id = champRole.champion_id
+                AND role.id = champRole.role_id
+                AND role.role_name = '{}'
+                ORDER BY price DESC, name;
+                """.format(dataList[0], dataList[1])
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10} {:<10}'.format(
+            "Champion", "Price", "Role")
+        print(header)
+        Q18Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10} {:<10}'.format(
+                row[0], row[1], row[2])
+            print(data)
+            Q18Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q18Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q19(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q19")
+
+    Q19Output = open("output/19.out", "w")
+    Q19Write = open("output/19.out", "w")
+
+    input = open("input/19.in", "r")
+    dataList = input.read().splitlines()
+
+    try:
+        sql = """WITH CountItems AS(SELECT items.id AS id, COUNT(items.id) AS maxItems
+                FROM champion, champRole, role, items, champItems
+                WHERE champion.id = champRole.champion_id
+                AND role.id = champRole.role_id
+                AND role.role_name = '{}'
+                ANd champion.id = champItems.champion_id
+                AND items.id = champItems.items_id
+                GROUP BY items.id)
+                SELECT items.name, MAX(CountItems.maxItems)
+                FROM items, CountItems
+                WHERE items.id = CountItems.id;
+                """.format(dataList[0])
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+        header = '{:<10} {:<10}'.format(
+            "Item", "Count")
+        print(header)
+        Q19Write.write(header + '\n')
+        rows = cursor.fetchall()
+        for row in rows:
+            # print(row)
+            data = '{:<10} {:<10}'.format(
+                row[0], row[1])
+            print(data)
+            Q19Write.write(data + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q19Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
+def Q20(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q20")
+
+    Q20Output = open("output/20.out", "w")
+    Q20Write = open("output/20.out", "w")
+
+    # Printing champions in mid lane
+    try:
+        sql = """ DELETE FROM users
+                WHERE users.name like "%Butterchomps%";
+                """
+
+        cursor = _conn.cursor()
+        cursor.execute(sql)
+
+        print("this query is deleting a user")
+        Q20Write.write(
+            "this query is deleting a user" + '\n')
+
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+    Q20Write.close()
+
+    print("++++++++++++++++++++++++++++++++++")
+
+
 def main():
     database = r"data.sqlite"
 
@@ -1050,6 +1207,11 @@ def main():
         Q14(conn)  # This query will find all users with last name Jones
         Q15(conn)  # This query will find the max health from champions
         Q16(conn)  # This query will add teemo
+        Q17(conn)  # This query will show champion lore for a champion
+        # This query will show champion that cost x amount of blue essense and can go to x lane
+        Q18(conn)   # Look at comment above ^
+        Q19(conn)  # This query will show max items that are used in x lane
+        Q20(conn)  # This query will delete a user
     closeConnection(conn, database)
 
 
