@@ -1,0 +1,16 @@
+id         name            price      lore_id    championstats_id
+1          Nasus           1350       1          1         
+2          Lee Sin         4800       2          2         
+3          Akali           3150       3          3         
+4          Master Yi       450        4          4         
+5          Xin Zhao        1350       5          5         
+6          Volibear        3150       6          6         
+7          Ryze            450        7          7         
+8          Twisted Fate    1350       8          8         
+9          Aurelion Sol    6300       9          9         
+10         Draven          4800       10         10        
+11         Caitlyn         4800       11         11        
+12         Lucian          4800       12         12        
+13         Blitzcrank      3150       13         13        
+14         Thresh          4800       14         14        
+15         Nautilus        4800       15         15        

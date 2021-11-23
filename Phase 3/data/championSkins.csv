@@ -1,0 +1,147 @@
+id,champion_id,name,price,chroma,prestige_edition
+1,1,Galactic Nasus,520,0,0
+2,1,Pharaoh Nasus,520,0,0
+3,1,Dreadknight Nasus,975,1,0
+4,1,Infernal Nasus,1820,0,0
+5,1,Archduke Nasus,750,0,0
+6,1,Worldbreaker Nasus,750,0,0
+7,1,Battlecast Nasus,1350,1,0
+8,1,Space Groove Nasus,1350,1,0
+9,1,Riot K-9 Nasus,975,0,0
+10,1,Lunar Guardian Nasus,1350,1,0
+11,2,Traditional Lee Sin,520,0,0
+12,2,Acolyte Lee Sin,750,0,0
+13,2,Dragon Fist Lee Sin,975,1,0
+14,2,Muay Thai Lee Sin,975,0,0
+15,2,Pool Party Lee Sin,975,0,0
+16,2,Knockout Lee Sin,1350,0,0
+17,2,God Fist Lee Sin,1820,0,0
+18,2,Nightbringer Lee Sin,1350,0,1
+19,2,Storm Dragon Lee Sin,1820,1,0
+20,2,SKT T1 Lee Sin,750,0,0
+21,2,Playmaker Lee Sin,975,1,0
+22,2,FPX Lee Sin,1350,1,0
+23,3,Nurse Akali,975,1,0
+24,3,Blood Moon Akali,975,0,0
+25,3,Silverfang Akali,975,0,0
+26,3,Headhunter Akali,1350,1,0
+27,3,Sashimi Akali,750,0,0
+28,3,K/DA Akali,1350,0,1
+29,3,PROJECT:Akali,1350,1,0
+30,3,True Damage Akali,1350,1,0
+31,3,K/DA ALL OUT Akali,1350,1,0
+32,3,Crime City Nightmare Akali,1350,1,0
+33,3,Stinger Akali,520,0,0
+34,3,Infernal Akali,520,0,0
+35,3,All-star Akali,975,0,0
+36,4,Assassin Master Yi,390,0,0
+37,4,Chosen Master Yi,520,0,0
+38,4,Ionia Master Yi,975,0,0
+39,4,Samurai Master Yi,520,0,0
+40,4,Headhunter Master Yi,975,1,0
+41,4,PROJECT: Yi,1820,0,0
+42,4,Cosmic Blade Master Yi,1350,0,0
+43,4,Eternal Sword Yi,1350,1,0
+44,4,Blood Moon Master Yi,1350,1,0
+45,4,PsyOps Master Yi,1350,1,0
+46,4,Snow Man Yi,1350,1,0
+47,5,Commando Xin Zhao,520,0,0
+48,5,Warring Kingdoms Xin Zhao,1350,1,0
+49,5,Secret Agent Xin Zhao,975,0,0
+50,5,Dragonslayer Xin Zhao,1350,1,0
+51,5,Cosmic Defender Xin Zhao ,1350,1,0
+52,5,Maruder Xin Zhao,1350,1,0
+53,5,Imperial Xin Zhao,520,0,0
+54,5,Viscero Xin Zhao,975,0,0
+55,5,Winged Hussar Xin Zhao,975,0,0
+56,6,Thunder Lord Volibear,520,0,0
+57,6,Runeguard Volibear,975,0,0
+58,6,Captain Volibear,750,0,0
+59,6,El Rayo Volibear,750,0,0
+60,6,The Thousand-Pierced Bear ,975,0,0
+61,6,Duality Dragon Volibear,1350,1,1
+62,6,Northern Storm Volibear,750,0,0
+63,7,Uncle Ryze,520,0,0
+64,7,Dark Crystal Ryze,975,0,0
+65,7,Ryze Whitebeard,750,0,0
+66,7,Guardian of the Sands Ryze,1350,1,0
+67,7,Tribal Ryze,520,0,0
+68,7,Professor Ryze,975,0,0
+69,7,Zombie Ryze,975,0,0
+70,7,Pirate Ryze,975,0,0
+71,7,SKT T1 Ryze,975,0,0
+72,7,Championship Ryze,1350,1,0
+73,8,Jack of Hearts Twisted Fate,520,0,0
+74,8,Tango Twisted Fate,520,0,0
+75,8,High Noon Twisted Fate,975,0,0
+76,8,Musketeer Twisted Fate,750,0,0
+77,8,Cutpurse Twisted Fate,750,0,0
+78,8,Bloon Moon Twisted Fate,1350,0,0
+79,8,Pulsefire Twisted Fate,1350,1,0
+80,8,Odyssey Twisted Fate,1350,1,0
+81,8,Crime City Nightmare Twisted Fate,1350,1,0
+82,8,The Magnificent Twisted Fate,1820,0,0
+83,8,Underworld Twisted Fate,975,0,0
+84,8,Red Card Twisted Fate,750,0,0
+85,8,DWG Twisted Fate,1350,1,0
+86,9,Ashen Lord Aurelion Sol,1350,0,0
+87,9,Mecha Aurelion Sol,1350,1,0
+88,9,Storm Dragon Aurelion Sol,1350,1,0
+89,10,Soul Reaver Draven,1350,0,0
+90,10,Gladiator Draven,975,0,0
+91,10,Primetime Draven,975,1,0
+92,10,Pool Party Draven,975,0,0
+93,10,Beast Hunter Draven,750,0,0
+94,10,Mecha Kingdom Draven,1350,1,0
+95,10,Ruined Draven,1350,1,0
+96,10,Draven Draven,500,0,0
+97,10,Santa Draven,1350,0,0
+98,11,Resistance Caitlyn,520,0,0
+99,11,Arctic Warfare Caitlyn,750,0,0
+100,11,Officer Caitlyn,975,0,0
+101,11,Headhunter Caitlyn,975,0,0
+102,11,Pulsefire Caitlyn,1820,1,0
+103,11,Pool Party Caitlyn,1350,1,0
+104,11,Arcade Caitlyn,1350,0,1
+105,11,Battle Academia Caitlyn,1820,1,0
+106,11,Sheriff Caitlyn,520,0,0
+107,11,Safari Caitlyn,975,0,0
+108,11,Lunar Wraith Caitlyn,1350,1,0
+109,12,Hired Gun Lucian,975,0,0
+110,12,PROJECT: Lucian,1350,1,0
+111,12,High Noon Lucian,1820,1,0
+112,12,Demacia Vice Lucian,1350,1,0
+113,12,Pulsefire Lucian,1350,0,1
+114,12,Arcana Lucian,1350,1,0
+115,12,Striker Lucian,750,0,0
+116,12,Heartseeker Lucian,1350,0,0
+117,13,Boom Boom Blitzcrank,520,0,0
+118,13,Plitover Customs Blitzcrank,1350,0,0
+119,13,iBlitzcrank,1350,0,0
+120,13,Battle Boss Blitzcrank,1350,1,0
+121,13,Lancer Rouge Blitzcrank,1350,0,0
+122,13,Lancer Paragon Blitzcrank,1350,0,0
+123,13,Space Groove Blitz & Crank,1820,1,0
+124,13,Goalkeeper Blitzcrank,520,0,0
+125,13,Definitely Not Blitzcrank,975,0,0
+126,13,Riot Blitzcrank,975,0,0
+127,13,Witch's Brew Blitzcrank,1350,1,0
+128,13,Rusty Blitzcrank,520,0,0
+129,14,Deep Terror Thresh,975,0,0
+130,14,Bloon Moon Thresh,975,0,0
+131,14,Dark Star Thresh,1820,1,0
+132,14,High Noon Thresh,1350,1,0
+133,14,Pulsefire Thresh,1350,0,1
+134,14,Spirit Blossom Thresh,1820,1,0
+135,14,Unbound Thresh,750,0,0
+136,14,Steel Dragon Thresh,1350,1,0
+137,14,Championship Thresh,975,1,0
+138,14,SSW Thresh,750,0,0
+139,14,FPX Thresh,1350,1,0
+140,15,Abyssal Nautilus,975,0,0
+141,15,Subterranean Nautilus,975,0,0
+142,15,AstroNautilus,1350,1,0
+143,15,Warden Nautilus,750,0,0
+144,15,Wordbreaker Nautilus,750,0,0
+145,15,Shan Hai Scrolls Nautilus,1350,1,0
+146,15,Conqueror Nautilus,975,0,0
