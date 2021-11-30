@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+img {
+  border: 5px solid rgb(168, 19, 123);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*https://www.w3schools.com/howto/howto_css_image_center.asp */
+}
+
+body {
+  background-image: url("../images/Arcanebackground.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /*https://www.w3schools.com/html/html_images_background.asp */
+}
