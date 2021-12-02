@@ -5,62 +5,159 @@
     <link rel="stylesheet" href="../static/website_css.css">
 </head>
 <body>
-    <h1>LOL Champions</h1>
+    <!-- https://www.tutorialspoint.com/How-to-set-Heading-alignment-in-HTML -->
+    <h1 style="text-align:center">LOL Champions</h1>
     <!--https://www.w3schools.com/howto/howto_css_images_side_by_side.asp-->
     <div class="row">
         <div class="column">
-          <img src="../images/Nasus.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Nasus" img src="../images/Nasus.jpg" style="width:100%">
         </div>
         <div class="column">
-          <img src="../images/LeeSin.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Lee Sin" img src="../images/LeeSin.jpg" style="width:100%">
         </div>
         <div class="column">
-          <img src="../images/Akali.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Akali" img src="../images/Akali.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/MasterYi.jpg" style="width:100%">
-          </div>
-        <div class="column">
-            <img src="../images/XinZhao.jpg" style="width:100%">
-          </div>
-        <div class="column">
-            <img src="../images/Volibear.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Master Yi" img src="../images/MasterYi.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Ryze.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Xin Zhao" img src="../images/XinZhao.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/TwistedFate.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Volibear" img src="../images/Volibear.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/AurelionSol.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Ryze" img src="../images/Ryze.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Draven.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Twisted Fate" img src="../images/TwistedFate.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Caitlyn.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Aurelion Sol" img src="../images/AurelionSol.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Lucian.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Draven" img src="../images/Draven.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Blitzcrank.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Caitlyn" img src="../images/Caitlyn.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Thresh.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Lucian" img src="../images/Lucian.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Nautilus.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Blitzcrank" img src="../images/Blitzcrank.jpg" style="width:100%">
         </div>
         <div class="column">
-            <img src="../images/Teemo.jpg" style="width:100%">
+            <img class = "myImages" id = "myImg" alt = "Thresh" img src="../images/Thresh.jpg" style="width:100%">
         </div>
-      </div>
+        <div class="column">
+            <img class = "myImages" id = "myImg" alt = "Nautilus" img src="../images/Nautilus.jpg" style="width:100%">
+        </div>
+        <div class="column">
+            <img class = "myImages" id = "myImg" alt = "Teemo" img src="../images/Teemo.jpg" style="width:100%">
+        </div>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+
+            <button class="tablink" onclick="openPage('Champion', this, 'red')"id="defaultOpen">Champion</button>
+            <button class="tablink" onclick="openPage('ChampionStats', this, 'blue')">Champion Stats</button>
+            <button class="tablink" onclick="openPage('AbilityInfo', this, 'green')">Ability Info</button>
+            <button class="tablink" onclick="openPage('ChampionRole', this, 'orange')">Champion Role</button>
+            <button class="tablink" onclick="openPage('ChampionSkins', this, 'yellow')">Champion Skins</button>
+            
+            
+            <div id="Champion" class="tabcontent">
+                <h3>Champion</h3>
+                <p>Home is where the heart is..</p>
+            </div>
+            
+            <div id="ChampionStats" class="tabcontent">
+                <h3>Champion Stats</h3>
+                <p>Some news this fine day!</p>
+            </div>
+            
+            <div id="AbilityInfo" class="tabcontent">
+                <h3>Ability Info</h3>
+                <p>Get in touch, or swing by for a cup of coffee.</p>
+            </div>
+            
+            <div id="ChampionRole" class="tabcontent">
+                <h3>Champion Role</h3>
+                <p>Who we are and what we do.</p>
+            </div>
+
+            <div id="ChampionSkins" class="tabcontent">
+                <h3>Champion Skins</h3>
+                <p>Who we are and what we do.</p>
+            </div>
+        </div>
+    </div>
+    <h1 style="text-align:center">Info</h1>
+    <div class="row">
+        <div class="column2">
+            <h1>Price</h1>
+                <label class="container">450
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">1350
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">3150
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">4800
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">6300
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+        </div>
+        <div class="column2">
+            <h1>Role</h1>
+                <label class="container">Top
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Jungle
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Mid
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">ADC
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Support
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+        </div>
+        <div class="column2">
+            <h1>DmgType</h1>
+                <label class="container">Ad
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Ap
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Tank
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+        </div>
 </body>
+<script src="../static/website_js.js"></script>
 </html>
-
-
-<!--div class="box NasusBox"><img src="../images/Nasus.jpg" alt="Nasus"></div-->
-<!-- <p><img src="../images/Nasus.jpg" alt="Nasus" width="193" height="130" class = "centerImage"></p>
-<p><img src="../images/LeeSin2.jpg" alt="LeeSin" width="193" height="130" class = "centerImage"></p> -->
