@@ -268,7 +268,8 @@ def populateTables(_conn):
 
             sql = """INSERT INTO abilityInfo VALUES(?,?,?,?,?,?,?)
                     """
-            args = [row.id, row.champion_id, row.passive, row.q, row.w, row.e, row.r]
+            args = [row.id, row.champion_id,
+                    row.passive, row.q, row.w, row.e, row.r]
             _conn.execute(sql, args)
 
         championSkins = pandas.read_csv(r"data/championSkins.csv")
@@ -771,7 +772,8 @@ def Q10(_conn):
         cursor.execute(sql)
 
         print("this query is deleting skins with the name High Noon")
-        Q10Write.write("this query is deleting skins with the name High Noon" + "\n")
+        Q10Write.write(
+            "this query is deleting skins with the name High Noon" + "\n")
 
     except Error as e:
         _conn.rollback()
@@ -1314,6 +1316,19 @@ def Q20(_conn):
     print("++++++++++++++++++++++++++++++++++")
 
 
+def Q21(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Q21")
+    user_id = 5
+    sql = """SELECT *
+            FROM users
+            WHERE users.id == {}""".format(user_id)
+    cursor = _conn.cursor()
+    cursor.execute(sql)
+    rows = cursor.fetchone()
+    print(rows[1])
+
+
 def main():
     database = r"data.sqlite"
 
@@ -1345,6 +1360,7 @@ def main():
         Q18(conn)  # Look at comment above ^
         Q19(conn)  # This query will show the most used items that are used in x lane
         Q20(conn)  # This query will delete a user
+        Q21(conn)
     closeConnection(conn, database)
 
 

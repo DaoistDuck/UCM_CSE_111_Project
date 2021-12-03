@@ -24,7 +24,7 @@ img {
 }
 
 body {
-  background-image: url("../images/Arcanebackground.jpg");
+  background-image: url("../static/images/Arcanebackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -194,7 +194,7 @@ html {
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 0px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
