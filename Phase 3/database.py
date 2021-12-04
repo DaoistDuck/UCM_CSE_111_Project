@@ -67,7 +67,7 @@ def createTables(_conn):
 
         sql = """CREATE TABLE role (
                     id INTEGER NOT NULL,
-                    role_name VARCHAR(50) NOT NULL)"""  # GOOD
+                    name VARCHAR(50) NOT NULL)"""  # GOOD
         _conn.execute(sql)
 
         sql = """CREATE TABLE items (
@@ -236,7 +236,7 @@ def populateTables(_conn):
 
             sql = """INSERT INTO role VALUES(?,?)
                     """
-            args = [row.id, row.role_name]
+            args = [row.id, row.name]
             _conn.execute(sql, args)
         # to here
 
@@ -729,7 +729,7 @@ def Q9(_conn):
                 FROM champion, role, champRole
                 WHERE champion.id = champRole.champion_id
                 AND role.id = champRole.role_id
-                AND role.role_name = "{}"
+                AND role.name = "{}"
                 """.format(
             dataList[0]
         )
@@ -1209,12 +1209,12 @@ def Q18(_conn):
     dataList = input.read().splitlines()
 
     try:
-        sql = """SELECT name, price, role.role_name
+        sql = """SELECT name, price, role.name
                 FROM champion, champRole, role
                 WHERE price == {}
                 AND champion.id = champRole.champion_id
                 AND role.id = champRole.role_id
-                AND role.role_name = '{}'
+                AND role.name = '{}'
                 ORDER BY price DESC, name;
                 """.format(
             dataList[0], dataList[1]
@@ -1256,7 +1256,7 @@ def Q19(_conn):
                 FROM champion, champRole, role, items, champItems
                 WHERE champion.id = champRole.champion_id
                 AND role.id = champRole.role_id
-                AND role.role_name = '{}'
+                AND role.name = '{}'
                 ANd champion.id = champItems.champion_id
                 AND items.id = champItems.items_id
                 GROUP BY items.id)

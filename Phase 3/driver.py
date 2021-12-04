@@ -3,10 +3,11 @@ import pandas
 import sqlite3
 from sqlalchemy import create_engine, MetaData, Table, inspect
 from flask import Flask, request, render_template, jsonify, session, redirect
+from sqlalchemy.sql.schema import PrimaryKeyConstraint
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
 from flask_login import login_required, logout_user, login_user, current_user
-from flask_admin import Admin, BaseView, expose
+from flask_admin import Admin, BaseView, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
@@ -44,7 +45,11 @@ def closeConnection(_conn, _dbFile):
 # https://python-adv-web-apps.readthedocs.io/en/latest/flask_db2.html
 
 
-class User(UserMixin, db.Model):
+class adminview(ModelView):
+    pass
+
+
+class Users(UserMixin, db.Model):
     __tablename__ = 'users'  # -> this 1 line of code enluded me for so long
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), unique=True)
@@ -60,19 +65,151 @@ class User(UserMixin, db.Model):
         self.id = id
 
 
-class adminview(ModelView):
-    pass
+class Champion(UserMixin, db.Model):
+    __tablename__ = 'champion'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30))
+    price = db.Column(db.Integer)
+    lore_id = db.Column(db.Integer)
+    championstats_id = db.Column(db.Integer)
+    abilityInfo_id = db.Column(db.Integer)
+    dmgType = db.Column(db.String(30))
+
+    def __init__(self, id, name, price, lore_id, championstats_id, abilityInfo_id, dmgType):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.lore_id = lore_id
+        self.championstats_id = championstats_id
+        self.abilityInfo_id = abilityInfo_id
+        self.dmgType = dmgType
 
 
-# class studentview(ModelView):
-#     pass
+class ChampionStats(UserMixin, db.Model):
+    __tablename__ = 'championStats'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    hp = db.Column(db.String(50))
+    resource = db.Column(db.String(50))
+    healthregen = db.Column(db.String(50))
+    manaregen = db.Column(db.String(50))
+    armor = db.Column(db.String(50))
+    atkdmg = db.Column(db.String(50))
+    magicresist = db.Column(db.String(50))
+    critdmg = db.Column(db.String(50))
+    movespeed = db.Column(db.String(50))
+    attackrange = db.Column(db.String(50))
+    baseas = db.Column(db.String(50))
+    atkwindup = db.Column(db.String(50))
+    bonusas = db.Column(db.String(50))
+    gameplayradius = db.Column(db.String(50))
+    selectionradius = db.Column(db.String(50))
+    pathingradius = db.Column(db.String(50))
+    acqradius = db.Column(db.String(50))
+
+    def __init__(self, id, champion_id, hp, resource, healthregen, manaregen, armor, atkdmg, magicresist, critdmg, movespeed, attackrange, baseas, atkwindup, bonusas, gameplayradius, selectionradius, pathingradius, acqradius):
+        self.id = id
+        self.champion_id = champion_id
+        self.hp = hp
+        self.resource = resource
+        self.healthregen = healthregen
+        self.manaregen = manaregen
+        self.armor = armor
+        self.atkdmg = atkdmg
+        self.magicresist = magicresist
+        self.critdmg = critdmg
+        self.movespeed = movespeed
+        self.attackrange = attackrange
+        self.baseas = baseas
+        self.atkwindup = atkwindup
+        self.bonusas = bonusas
+        self.gameplayradius = gameplayradius
+        self.selectionradius = selectionradius
+        self.pathingradius = pathingradius
+        self.acqradius = acqradius
 
 
-# class Teacherview(ModelView):
-#     pass
+class ChampionAbilityInfo(UserMixin, db.Model):
+    __tablename__ = 'abilityInfo'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    passive = db.Column(db.String(50))
+    q = db.Column(db.String(50))
+    w = db.Column(db.String(50))
+    e = db.Column(db.String(50))
+    r = db.Column(db.String(50))
+
+    def __init__(self, id, champion_id, passive, q, w, e, r):
+        self.id = id
+        self.champion_id = champion_id
+        self.passive = passive
+        self.q = q
+        self.w = w
+        self.e = e
+        self.r = r
+
+
+class ChampionSkins(UserMixin, db.Model):
+    __tablename__ = 'championSkins'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    name = db.Column(db.String(50))
+    price = db.Column(db.Integer)
+    chroma = db.Column(db.Integer)
+    prestige_edition = db.Column(db.Integer)
+
+    def __init__(self, id, champion_id, name, price, chroma, prestige_edition):
+        self.id = id
+        self.champion_id = champion_id
+        self.name = name
+        self.price = price
+        self.chroma = chroma
+        self.prestige_edition = prestige_edition
+
+
+class Championlore (UserMixin, db.Model):
+    __tablename__ = 'lore'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    description = db.Column(db.String(100))
+
+    def __init__(self, id, champion_id, description):
+        self.id = id
+        self.champion_id = champion_id
+        self.description = description
+
+
+class Items(UserMixin, db.Model):
+    __tablename__ = 'items'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    price = db.Column(db.Integer)
+
+    def __init__(self, id, name, price):
+        self.id = id
+        self.name = name
+        self.price = price
+
+
+class Role(UserMixin, db.Model):
+    __tablename__ = 'role'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
 
 admin = Admin(app)
-admin.add_view(adminview(User, db.session))
+admin.add_view(adminview(Users, db.session))
+admin.add_view(adminview(Champion, db.session))
+admin.add_view(adminview(ChampionStats, db.session))
+admin.add_view(adminview(ChampionAbilityInfo, db.session))
+admin.add_view(adminview(ChampionSkins, db.session))
+admin.add_view(adminview(Championlore, db.session))
+admin.add_view(adminview(Items, db.session))
+admin.add_view(adminview(Role, db.session))
 
 
 @login.user_loader
@@ -84,7 +221,7 @@ def load_user(user_id):
     cursor = conn.cursor()
     cursor.execute(sql)
     rows = cursor.fetchone()
-    return User(rows[0], rows[1], rows[2], rows[3], rows[4])
+    return Users(rows[0], rows[1], rows[2], rows[3], rows[4])
 
 
 def getUser(user):
