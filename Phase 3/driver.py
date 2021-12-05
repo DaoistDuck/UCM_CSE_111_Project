@@ -191,6 +191,18 @@ class Items(UserMixin, db.Model):
         self.price = price
 
 
+class ChampionItems(UserMixin, db.Model):
+    __tablename__ = 'champItems'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    items_id = db.Column(db.Integer)
+
+    def __init__(self, id, champion_id, items_id):
+        self.id = id
+        self.champion_id = champion_id
+        self.items_id = items_id
+
+
 class Role(UserMixin, db.Model):
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True)
@@ -201,6 +213,18 @@ class Role(UserMixin, db.Model):
         self.name = name
 
 
+class ChampionRole(UserMixin, db.Model):
+    __tablename__ = 'champRole'
+    id = db.Column(db.Integer, primary_key=True)
+    champion_id = db.Column(db.Integer)
+    role_id = db.Column(db.Integer)
+
+    def __init__(self, id, champion_id, role_id):
+        self.id = id
+        self.champion_id = champion_id
+        self.role_id = role_id
+
+
 admin = Admin(app)
 admin.add_view(adminview(Users, db.session))
 admin.add_view(adminview(Champion, db.session))
@@ -209,7 +233,9 @@ admin.add_view(adminview(ChampionAbilityInfo, db.session))
 admin.add_view(adminview(ChampionSkins, db.session))
 admin.add_view(adminview(Championlore, db.session))
 admin.add_view(adminview(Items, db.session))
+admin.add_view(adminview(ChampionItems, db.session))
 admin.add_view(adminview(Role, db.session))
+admin.add_view(adminview(ChampionRole, db.session))
 
 
 @login.user_loader

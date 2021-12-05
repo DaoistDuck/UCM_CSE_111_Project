@@ -148,6 +148,9 @@ def dropTables(_conn):
         sql = "DROP TABLE champion"
         _conn.execute(sql)
 
+        sql = "DROP TABLE user"
+        _conn.execute(sql)
+
         sql = "DROP TABLE champItems"
         _conn.execute(sql)
 
