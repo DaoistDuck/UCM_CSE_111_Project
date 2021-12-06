@@ -183,7 +183,7 @@ html {
   background-color: orange;
 }
 #ChampionRole {
-  background-color: yellow;
+  background-color: rgb(255, 0, 200);
 }
 
 /* End of tabs*/
@@ -267,3 +267,22 @@ html {
 }
 
 /* End of checkboxs*/
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}

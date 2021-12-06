@@ -1,14 +1,16 @@
 from sqlite3 import Error
-import pandas
+from flask.helpers import send_from_directory
+from flask.json import dump
+import pandas as pd
 import sqlite3
-from sqlalchemy import create_engine, MetaData, Table, inspect
 from flask import Flask, request, render_template, jsonify, session, redirect
-from sqlalchemy.sql.schema import PrimaryKeyConstraint
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
-from flask_login import login_required, logout_user, login_user, current_user
-from flask_admin import Admin, BaseView, expose, AdminIndexView
+from flask_login import login_user
+from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+import os
+import json
 
 app = Flask(__name__)
 app.secret_key = 'ASDASDDASDSAFA'
@@ -167,7 +169,7 @@ class ChampionSkins(UserMixin, db.Model):
         self.prestige_edition = prestige_edition
 
 
-class Championlore (UserMixin, db.Model):
+class ChampionLore (UserMixin, db.Model):
     __tablename__ = 'lore'
     id = db.Column(db.Integer, primary_key=True)
     champion_id = db.Column(db.Integer)
@@ -231,7 +233,7 @@ admin.add_view(adminview(Champion, db.session))
 admin.add_view(adminview(ChampionStats, db.session))
 admin.add_view(adminview(ChampionAbilityInfo, db.session))
 admin.add_view(adminview(ChampionSkins, db.session))
-admin.add_view(adminview(Championlore, db.session))
+admin.add_view(adminview(ChampionLore, db.session))
 admin.add_view(adminview(Items, db.session))
 admin.add_view(adminview(ChampionItems, db.session))
 admin.add_view(adminview(Role, db.session))
@@ -275,14 +277,14 @@ def login():
         passs = request.form['password']
 
     try:
-        session.pop('user_id', None)
+        #session.pop('user_id', None)
         userInfo = getUser(user)
         id = userInfo[0]
         pasword = userInfo[1]
         type = userInfo[2]
         tmpUser = load_user(id)
         if(pasword == passs):
-            session['user_id'] = id
+            #session['user_id'] = id
             login_user(tmpUser)
             if(type == 1):
                 print("ADMIN")
@@ -297,10 +299,67 @@ def login():
     return render_template("login.html")
 
 
-@ app.route('/user', methods=['GET'])
+@ app.route('/user', methods=['POST', 'GET'])
 def user():
+    if(request.method == 'POST'):
+        mode = json.loads(request.data)['mode']
+        print(mode)
+        championname = json.loads(request.data)['alt']
+        print(championname)
+        conn = openConnection("data.sqlite")
+        sql = """"""
+        if mode == 'lore':
+            sql = """SELECT description
+                    FROM lore, champion
+                    WHERE champion.id = lore.champion_id
+                    AND champion.name = '{}'
+                    """.format(championname)
+        elif mode == 'champion':
+            sql = """SELECT name, price, dmgType
+                    FROM champion
+                    WHERE champion.name = '{}'
+                    """.format(championname)
+        elif mode == 'championStats':
+            sql = """SELECT hp ,  resource ,  healthregen ,  manaregen ,  armor ,  atkdmg ,  magicresist ,  critdmg ,  movespeed ,  attackrange ,
+                baseas ,  atkwindup , bonusas ,  gameplayradius ,  selectionradius ,  pathingradius ,  acqradius
+                    FROM champion,championStats
+                    WHERE champion.id = championStats.champion_id
+                    AND champion.name = '{}'
+                    """.format(championname)
+        elif mode == 'abilityInfo':
+            sql = """SELECT passive, q, w, e, r
+                    FROM champion,abilityInfo
+                    WHERE champion.id = abilityInfo.champion_id
+                    AND champion.name = '{}'
+                    """.format(championname)
+        elif mode == 'role':
+            sql = """SELECT role.name
+                    FROM champion,role, champRole
+                    WHERE champion.id = champRole.champion_id
+                    AND role.id = champRole.role_id
+                    AND champion.name = '{}'
+                    """.format(championname)
+        elif mode == 'championSkins':
+            sql = """SELECT championSkins.name, championSkins.price, championSkins.chroma, championSkins.prestige_edition
+                    FROM champion, championSkins
+                    WHERE champion.id = championSkins.champion_id
+                    AND champion.name = '{}'
+                    """.format(championname)
+
+        # cursor = conn.cursor()
+        # cursor.execute(sql)
+        # rows = cursor.fetchall()
+        df = pd.read_sql_query(sql, con=conn).to_dict('records')
+        print(df)
+        return json.dumps(df)
     if(request.method == 'GET'):
         return render_template("website.html")
+
+
+@ app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static/images'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
