@@ -476,7 +476,7 @@ function getChampionRole(alt){
 
     const myObj = JSON.parse(this.responseText);
       let text = "<table border='1'>"
-      championList = ["Name"];
+      championList = ["Lane"];
       text += "<th>" + championList[0] + "</th>";
       for (let x in myObj) {
         console.log(myObj)
