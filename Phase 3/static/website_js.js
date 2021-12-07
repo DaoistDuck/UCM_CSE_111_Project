@@ -14,12 +14,236 @@ var tmp2;
 //     //sendData(img.alt);
 //     img.onclick = function(evt){
 //       //console.log(img.src)
-//       sendData(img.alt);
+//       //sendData(img.alt);
 //       modal.style.display = "block";
 //       modalImg.src = this.src;
 //       //captionText.innerHTML = tmp2;
 //     }
 // }
+
+function priceFunction() {
+  var checkBox = document.getElementsByClassName("pricecheck");
+  var listalt = []
+  for(var i = 0; i < checkBox.length; i++){
+    var input = checkBox[i]
+    if (input.checked == true){
+      console.log("Pressed Checkbox")
+      console.log(input.alt)
+      listalt.push(input.alt)
+    } else {
+       console.log("Didnt press Checkbox")
+    }
+  }
+  console.log(listalt)
+  findPrice(listalt)
+}
+
+function roleFunction() {
+  var checkBox = document.getElementsByClassName("rolecheck");
+  var listalt = []
+  for(var i = 0; i < checkBox.length; i++){
+    var input = checkBox[i]
+    if (input.checked == true){
+      console.log("Pressed Checkbox")
+      console.log(input.alt)
+      listalt.push(input.alt)
+    } else {
+       console.log("Didnt press Checkbox")
+    }
+  }
+  console.log(listalt)
+  findRole(listalt)
+}
+
+function dmgTypeFunction() {
+  var checkBox = document.getElementsByClassName("damagetype");
+  var listalt = []
+  for(var i = 0; i < checkBox.length; i++){
+    var input = checkBox[i]
+    if (input.checked == true){
+      console.log("Pressed Checkbox")
+      console.log(input.alt)
+      listalt.push(input.alt)
+    } else {
+       console.log("Didnt press Checkbox")
+    }
+  }
+  console.log(listalt)
+  finddmgType(listalt)
+}
+
+function findPrice(alt){
+  //Storing the data that you will send as a json object
+  const json_datav2 = {
+    mode: "price",
+    alt: alt,
+  };
+
+  //initializing everything to make the api call this is using AJAX
+  const xhttp = new XMLHttpRequest();
+  const method = "POST";
+  const url = "http://127.0.0.1:5000/user";
+
+  const async = true;
+  xhttp.open(method, url, async); //opens connection
+  console.log(JSON.stringify(json_datav2));
+  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
+
+//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
+  xhttp.onload = function () {
+    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+    console.log("made API call");
+    console.log(this.responseText);
+    const myObj = JSON.parse(this.responseText);
+    console.log(myObj)
+    for (var i = 0; i < images.length; i++){
+      var img = images[i];
+      img.style.visibility = "visible";
+      //sendData(img.alt);
+      for (let x in myObj) {
+        if(img.alt == myObj[x].name){
+          console.log(img.alt)
+          img.style.visibility = "hidden";
+        } //else{
+        //   console.log(img.alt)
+        //   img.style.visibility = "hidden";
+        // }
+      }
+    }
+    
+    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
+  };
+}
+
+
+function findRole(alt){
+  //Storing the data that you will send as a json object
+  const json_datav2 = {
+    mode: "role",
+    alt: alt,
+  };
+
+  //initializing everything to make the api call this is using AJAX
+  const xhttp = new XMLHttpRequest();
+  const method = "POST";
+  const url = "http://127.0.0.1:5000/user";
+
+  const async = true;
+  xhttp.open(method, url, async); //opens connection
+  console.log(JSON.stringify(json_datav2));
+  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
+
+//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
+  xhttp.onload = function () {
+    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+    console.log("made API call");
+    console.log(this.responseText);
+    const myObj = JSON.parse(this.responseText);
+    console.log(myObj)
+    if(myObj != "empty"){
+      var imgalt = []
+      var objType = []
+    
+      for (let x in myObj) {
+        objType.push(myObj[x].name)
+      }
+      
+      for (var i = 0; i < images.length; i++){
+        var img = images[i];
+        imgalt.push(img.alt)
+        img.style.visibility = "visible";
+      }
+      console.log(imgalt)
+      console.log(objType)
+      //https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
+      let difference = imgalt.filter(x => !objType.includes(x))
+      console.log(difference )
+
+      for (var i = 0; i < images.length; i++){
+        var img = images[i];
+        img.style.visibility = "visible";
+        
+        for(var j = 0; j < difference.length; j++){
+          if(difference[j] == img.alt){
+            console.log(img.alt)
+            img.style.visibility = "hidden";
+          }
+        }
+      }
+    } else{
+      for (var i = 0; i < images.length; i++){
+        var img = images[i];
+        img.style.visibility = "visible";
+      }
+    }
+    
+    
+    
+    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
+  };
+}
+
+
+function finddmgType(alt){
+  //Storing the data that you will send as a json object
+  const json_datav2 = {
+    mode: "dmgType",
+    alt: alt,
+  };
+
+
+  //initializing everything to make the api call this is using AJAX
+  const xhttp = new XMLHttpRequest();
+  const method = "POST";
+  const url = "http://127.0.0.1:5000/user";
+
+  const async = true;
+  xhttp.open(method, url, async); //opens connection
+  console.log(JSON.stringify(json_datav2));
+  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
+
+//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
+  xhttp.onload = function () {
+    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+    console.log("made API call");
+    console.log(this.responseText);
+    const myObj = JSON.parse(this.responseText);
+    console.log(myObj)
+    var imgalt = []
+    var objType = []
+   
+    for (let x in myObj) {
+      objType.push(myObj[x].name)
+    }
+    
+    for (var i = 0; i < images.length; i++){
+      var img = images[i];
+      imgalt.push(img.alt)
+      img.style.visibility = "visible";
+      //sendData(img.alt);
+      
+    }
+    console.log(imgalt)
+    console.log(objType)
+    //https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
+    let intersection = imgalt.filter(x => objType.includes(x))
+    console.log(intersection)
+
+    for (var i = 0; i < images.length; i++){
+      var img = images[i];
+      imgalt.push(img.alt)
+      img.style.visibility = "visible";
+      
+      for(var j = 0; j < intersection.length; j++){
+        if(intersection[j] == img.alt){
+          console.log(img.alt)
+          img.style.visibility = "hidden";
+        }
+      }
+    }
+    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
+  };
+}
 
 var img = images[0];
 img.onclick = function(evt){

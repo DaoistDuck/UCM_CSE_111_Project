@@ -65,10 +65,7 @@
             <button class="tablink" onclick="openPage('ChampionStats', this, 'blue')">Champion Stats</button>
             <button class="tablink" onclick="openPage('AbilityInfo', this, 'green')">Ability Info</button>
             <button class="tablink" onclick="openPage('ChampionSkins', this, 'yellow')">Champion Skins</button>
-            <button class="tablink" onclick="openPage('ChampionRole', this, 'orange')">Champion Role</button>
-            
-            
-            
+        
             <div id="Champion" class="tabcontent">
                 <h3>Champion</h3>
                 <p id = 'demo1'>Some news this fine day!</p>
@@ -83,12 +80,7 @@
                 <h3>Ability Info</h3>
                 <p id ='demo3'>Get in touch, or swing by for a cup of coffee.</p>
             </div>
-            
-            <div id="ChampionRole" class="tabcontent">
-                <h3>Champion Role</h3>
-                <p id = 'demo4'>Who we are and what we do.</p>
-            </div>
-
+    
             <div id="ChampionSkins" class="tabcontent">
                 <h3>Champion Skins</h3>
                 <p id = 'demo5'>Who we are and what we do.</p>
@@ -99,63 +91,50 @@
     <div class="row">
         <div class="column2">
             <h1>Price</h1>
-                <label class="container">450
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label class="container" for="myCheck">450
+                    <input type="checkbox" onclick="priceFunction()" id='myCheck' alt = '450' class = 'pricecheck'>
                 </label>
-                <label class="container">1350
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label class="container" for="myCheck">1350
+                    <input type="checkbox" onclick="priceFunction()" id='myCheck' alt = '1350' class = 'pricecheck'>
                 </label>
-                <label class="container">3150
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label class="container" for="myCheck">3150
+                    <input type="checkbox" onclick="priceFunction()" id='myCheck' alt = '3150' class = 'pricecheck'>
                 </label>
-                <label class="container">4800
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label class="container" for="myCheck">4800
+                    <input type="checkbox" onclick="priceFunction()" id='myCheck' alt = '4800' class = 'pricecheck'>
                 </label>
-                <label class="container">6300
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label class="container" for="myCheck">6300
+                    <input type="checkbox" onclick="priceFunction()" id='myCheck' alt = '6300' class = 'pricecheck'>
                 </label>
         </div>
         <div class="column2">
             <h1>Role</h1>
                 <label class="container">Top
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="roleFunction()" id='myCheck' alt = 'Top' class = 'rolecheck'>
                 </label>
                 <label class="container">Jungle
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="roleFunction()" id='myCheck' alt = 'Jungle' class = 'rolecheck'>
                 </label>
                 <label class="container">Mid
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="roleFunction()" id='myCheck' alt = 'Mid' class = 'rolecheck'>
                 </label>
                 <label class="container">ADC
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="roleFunction()" id='myCheck' alt = 'ADC' class = 'rolecheck'>
                 </label>
                 <label class="container">Support
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="roleFunction()" id='myCheck' alt = 'Support' class = 'rolecheck'>
                 </label>
         </div>
         <div class="column2">
             <h1>DmgType</h1>
                 <label class="container">Ad
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="dmgTypeFunction()" id='myCheck' alt = 'ad' class = 'damagetype'>
                 </label>
                 <label class="container">Ap
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="dmgTypeFunction()" id='myCheck' alt = 'ap' class = 'damagetype'>
                 </label>
                 <label class="container">Tank
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                    <input type="checkbox" onclick="dmgTypeFunction()" id='myCheck' alt = 'tank' class = 'damagetype'>
                 </label>
         </div>
 </body>

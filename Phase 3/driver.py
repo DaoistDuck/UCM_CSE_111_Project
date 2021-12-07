@@ -304,22 +304,26 @@ def user():
     if(request.method == 'POST'):
         mode = json.loads(request.data)['mode']
         print(mode)
-        championname = json.loads(request.data)['alt']
-        print(championname)
+        # print(championname)
+        #size = json.loads(request.data)
+        # print(size)
         conn = openConnection("data.sqlite")
         sql = """"""
         if mode == 'lore':
+            championname = json.loads(request.data)['alt']
             sql = """SELECT description
                     FROM lore, champion
                     WHERE champion.id = lore.champion_id
                     AND champion.name = '{}'
                     """.format(championname)
         elif mode == 'champion':
+            championname = json.loads(request.data)['alt']
             sql = """SELECT name, price, dmgType
                     FROM champion
                     WHERE champion.name = '{}'
                     """.format(championname)
         elif mode == 'championStats':
+            championname = json.loads(request.data)['alt']
             sql = """SELECT hp ,  resource ,  healthregen ,  manaregen ,  armor ,  atkdmg ,  magicresist ,  critdmg ,  movespeed ,  attackrange ,
                 baseas ,  atkwindup , bonusas ,  gameplayradius ,  selectionradius ,  pathingradius ,  acqradius
                     FROM champion,championStats
@@ -327,28 +331,118 @@ def user():
                     AND champion.name = '{}'
                     """.format(championname)
         elif mode == 'abilityInfo':
+            championname = json.loads(request.data)['alt']
             sql = """SELECT passive, q, w, e, r
                     FROM champion,abilityInfo
                     WHERE champion.id = abilityInfo.champion_id
                     AND champion.name = '{}'
                     """.format(championname)
-        elif mode == 'role':
-            sql = """SELECT role.name
-                    FROM champion,role, champRole
-                    WHERE champion.id = champRole.champion_id
-                    AND role.id = champRole.role_id
-                    AND champion.name = '{}'
-                    """.format(championname)
         elif mode == 'championSkins':
+            championname = json.loads(request.data)['alt']
             sql = """SELECT championSkins.name, championSkins.price, championSkins.chroma, championSkins.prestige_edition
                     FROM champion, championSkins
                     WHERE champion.id = championSkins.champion_id
                     AND champion.name = '{}'
                     """.format(championname)
+        elif mode == 'price':
+            listprice = json.loads(request.data)['alt']
+            size = len(listprice)
+            print(size)
+            if size == 0:
+                print("empty")
+                return json.dumps("empty")
+            elif size == 1:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.price NOT IN({})
+                        """.format(listprice[0])
+            elif size == 2:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.price NOT IN({}, {})
+                        """.format(listprice[0], listprice[1])
+            elif size == 3:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.price NOT IN({}, {}, {})
+                        """.format(listprice[0], listprice[1], listprice[2])
+            elif size == 4:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.price NOT IN({}, {}, {},{})
+                        """.format(listprice[0], listprice[1], listprice[2], listprice[3])
+            elif size == 5:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.price NOT IN({}, {},{},{},{})
+                        """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4])
+        elif mode == 'role':
+            listrole = json.loads(request.data)['alt']
+            size = len(listrole)
+            print(size)
+            if size == 0:
+                print("empty")
+                return json.dumps("empty")
+            elif size == 1:
+                print("in size == 1")
+                sql = """SELECT champion.name
+                        FROM champion, role, champRole
+                        WHERE champion.id = champRole.champion_id
+                        AND role.id = champRole.role_id
+                        AND role.name IN("{}")
+                        """.format(listrole[0])
+            elif size == 2:
+                sql = """SELECT champion.name
+                        FROM champion, role, champRole
+                        WHERE champion.id = champRole.champion_id
+                        AND role.id = champRole.role_id
+                        AND role.name IN("{}", "{}")
+                        """.format(listrole[0], listrole[1])
+            elif size == 3:
+                sql = """SELECT champion.name
+                        FROM champion, role, champRole
+                        WHERE champion.id = champRole.champion_id
+                        AND role.id = champRole.role_id
+                        AND role.name IN("{}", "{}", "{}")
+                        """.format(listrole[0], listrole[1], listrole[2])
+            elif size == 4:
+                sql = """SELECT champion.name
+                        FROM champion, role, champRole
+                        WHERE champion.id = champRole.champion_id
+                        AND role.id = champRole.role_id
+                        AND role.name IN("{}", "{}", "{}","{}")
+                        """.format(listrole[0], listrole[1], listrole[2], listrole[3])
+            elif size == 5:
+                sql = """SELECT champion.name
+                        FROM champion, role, champRole
+                        WHERE champion.id = champRole.champion_id
+                        AND role.id = champRole.role_id
+                        AND role.name IN("{}", "{}","{}","{}","{}")
+                        """.format(listrole[0], listrole[1], listrole[2], listrole[3], listrole[4])
+        elif mode == 'dmgType':
+            listdmgType = json.loads(request.data)['alt']
+            size = len(listdmgType)
+            print(size)
+            if size == 0:
+                print("empty")
+                return json.dumps("empty")
+            elif size == 1:
+                print("in size == 1")
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.dmgType NOT IN("{}")
+                        """.format(listdmgType[0])
+            elif size == 2:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.dmgType NOT IN("{}", "{}")
+                        """.format(listdmgType[0], listdmgType[1])
+            elif size == 3:
+                sql = """SELECT champion.name
+                        FROM champion
+                        WHERE champion.dmgType NOT IN("{}", "{}", "{}")
+                        """.format(listdmgType[0], listdmgType[1], listdmgType[2])
 
-        # cursor = conn.cursor()
-        # cursor.execute(sql)
-        # rows = cursor.fetchall()
         df = pd.read_sql_query(sql, con=conn).to_dict('records')
         print(df)
         return json.dumps(df)
@@ -356,6 +450,7 @@ def user():
         return render_template("website.html")
 
 
+# https://stackoverflow.com/questions/67204903/adding-a-favicon-to-flask
 @ app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static/images'),
