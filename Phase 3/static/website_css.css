@@ -4,7 +4,7 @@
 
 .column {
   float: left;
-  width: 25%; /* if need to make more/less pictures */
+  width: 12.5%; /* if need to make more/less pictures */
   padding: 5px;
 }
 
@@ -229,3 +229,7 @@ td {
 h3 {
   text-align: center;
 }
+
+/* Start of radio buttons to look like box*/
+
+/* End of radio*/

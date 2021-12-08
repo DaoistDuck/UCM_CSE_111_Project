@@ -5,258 +5,19 @@ var modal = document.getElementById("myModal");
 var images = document.getElementsByClassName("myImages");
 //console.log(images)
 var modalImg = document.getElementById("img01");
+
 var captionText = document.getElementById("caption");
-var tmp = [];
-var tmp2;
 // // https://stackoverflow.com/questions/47798971/several-modal-images-on-page
-// for (var i = 0; i < images.length; i++){
-//     var img = images[i];
-//     //sendData(img.alt);
-//     img.onclick = function(evt){
-//       //console.log(img.src)
-//       //sendData(img.alt);
-//       modal.style.display = "block";
-//       modalImg.src = this.src;
-//       //captionText.innerHTML = tmp2;
-//     }
-// }
-
-function priceFunction() {
-  var checkBox = document.getElementsByClassName("pricecheck");
-  var listalt = []
-  for(var i = 0; i < checkBox.length; i++){
-    var input = checkBox[i]
-    if (input.checked == true){
-      console.log("Pressed Checkbox")
-      console.log(input.alt)
-      listalt.push(input.alt)
-    } else {
-       console.log("Didnt press Checkbox")
-    }
-  }
-  console.log(listalt)
-  findPrice(listalt)
-}
-
-function roleFunction() {
-  var checkBox = document.getElementsByClassName("rolecheck");
-  var listalt = []
-  for(var i = 0; i < checkBox.length; i++){
-    var input = checkBox[i]
-    if (input.checked == true){
-      console.log("Pressed Checkbox")
-      console.log(input.alt)
-      listalt.push(input.alt)
-    } else {
-       console.log("Didnt press Checkbox")
-    }
-  }
-  console.log(listalt)
-  findRole(listalt)
-}
-
-function dmgTypeFunction() {
-  var checkBox = document.getElementsByClassName("damagetype");
-  var listalt = []
-  for(var i = 0; i < checkBox.length; i++){
-    var input = checkBox[i]
-    if (input.checked == true){
-      console.log("Pressed Checkbox")
-      console.log(input.alt)
-      listalt.push(input.alt)
-    } else {
-       console.log("Didnt press Checkbox")
-    }
-  }
-  console.log(listalt)
-  finddmgType(listalt)
-}
-
-function findPrice(alt){
-  //Storing the data that you will send as a json object
-  const json_datav2 = {
-    mode: "price",
-    alt: alt,
-  };
-
-  //initializing everything to make the api call this is using AJAX
-  const xhttp = new XMLHttpRequest();
-  const method = "POST";
-  const url = "http://127.0.0.1:5000/user";
-
-  const async = true;
-  xhttp.open(method, url, async); //opens connection
-  console.log(JSON.stringify(json_datav2));
-  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
-
-//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
-  xhttp.onload = function () {
-    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
-    console.log("made API call");
-    console.log(this.responseText);
-    const myObj = JSON.parse(this.responseText);
-    console.log(myObj)
-    for (var i = 0; i < images.length; i++){
-      var img = images[i];
-      img.style.visibility = "visible";
-      //sendData(img.alt);
-      for (let x in myObj) {
-        if(img.alt == myObj[x].name){
-          console.log(img.alt)
-          img.style.visibility = "hidden";
-        } //else{
-        //   console.log(img.alt)
-        //   img.style.visibility = "hidden";
-        // }
-      }
-    }
-    
-    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
-  };
-}
-
-
-function findRole(alt){
-  //Storing the data that you will send as a json object
-  const json_datav2 = {
-    mode: "role",
-    alt: alt,
-  };
-
-  //initializing everything to make the api call this is using AJAX
-  const xhttp = new XMLHttpRequest();
-  const method = "POST";
-  const url = "http://127.0.0.1:5000/user";
-
-  const async = true;
-  xhttp.open(method, url, async); //opens connection
-  console.log(JSON.stringify(json_datav2));
-  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
-
-//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
-  xhttp.onload = function () {
-    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
-    console.log("made API call");
-    console.log(this.responseText);
-    const myObj = JSON.parse(this.responseText);
-    console.log(myObj)
-    if(myObj != "empty"){
-      var imgalt = []
-      var objType = []
-    
-      for (let x in myObj) {
-        objType.push(myObj[x].name)
-      }
-      
-      for (var i = 0; i < images.length; i++){
-        var img = images[i];
-        imgalt.push(img.alt)
-        img.style.visibility = "visible";
-      }
-      console.log(imgalt)
-      console.log(objType)
-      //https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
-      let difference = imgalt.filter(x => !objType.includes(x))
-      console.log(difference )
-
-      for (var i = 0; i < images.length; i++){
-        var img = images[i];
-        img.style.visibility = "visible";
-        
-        for(var j = 0; j < difference.length; j++){
-          if(difference[j] == img.alt){
-            console.log(img.alt)
-            img.style.visibility = "hidden";
-          }
-        }
-      }
-    } else{
-      for (var i = 0; i < images.length; i++){
-        var img = images[i];
-        img.style.visibility = "visible";
-      }
-    }
-    
-    
-    
-    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
-  };
-}
-
-
-function finddmgType(alt){
-  //Storing the data that you will send as a json object
-  const json_datav2 = {
-    mode: "dmgType",
-    alt: alt,
-  };
-
-
-  //initializing everything to make the api call this is using AJAX
-  const xhttp = new XMLHttpRequest();
-  const method = "POST";
-  const url = "http://127.0.0.1:5000/user";
-
-  const async = true;
-  xhttp.open(method, url, async); //opens connection
-  console.log(JSON.stringify(json_datav2));
-  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
-
-//  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
-  xhttp.onload = function () {
-    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
-    console.log("made API call");
-    console.log(this.responseText);
-    const myObj = JSON.parse(this.responseText);
-    console.log(myObj)
-    var imgalt = []
-    var objType = []
-   
-    for (let x in myObj) {
-      objType.push(myObj[x].name)
-    }
-    
-    for (var i = 0; i < images.length; i++){
-      var img = images[i];
-      imgalt.push(img.alt)
-      img.style.visibility = "visible";
-      //sendData(img.alt);
-      
-    }
-    console.log(imgalt)
-    console.log(objType)
-    //https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
-    let intersection = imgalt.filter(x => objType.includes(x))
-    console.log(intersection)
-
-    for (var i = 0; i < images.length; i++){
-      var img = images[i];
-      imgalt.push(img.alt)
-      img.style.visibility = "visible";
-      
-      for(var j = 0; j < intersection.length; j++){
-        if(intersection[j] == img.alt){
-          console.log(img.alt)
-          img.style.visibility = "hidden";
-        }
-      }
-    }
-    //captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
-  };
-}
 
 var img = images[0];
 img.onclick = function(evt){
-  //console.log(img.src)
   getLore(img.alt);
   getChampionInfo(img.alt);
   getChampionStats(img.alt);
   getChampionAbilityInfo(img.alt);
   getChampionSkins(img.alt);
-  getChampionRole(img.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp2;
 }
 
 var img2 = images[1];
@@ -266,10 +27,8 @@ img2.onclick = function(evt){
   getChampionStats(img2.alt);
   getChampionAbilityInfo(img2.alt);
   getChampionSkins(img2.alt);
-  getChampionRole(img2.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img3 = images[2];
@@ -279,10 +38,8 @@ img3.onclick = function(evt){
   getChampionStats(img3.alt);
   getChampionAbilityInfo(img3.alt);
   getChampionSkins(img3.alt);
-  getChampionRole(img3.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img4 = images[3];
@@ -292,10 +49,8 @@ img4.onclick = function(evt){
   getChampionStats(img4.alt);
   getChampionAbilityInfo(img4.alt);
   getChampionSkins(img4.alt);
-  getChampionRole(img4.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img5 = images[4];
@@ -305,10 +60,8 @@ img5.onclick = function(evt){
   getChampionStats(img5.alt);
   getChampionAbilityInfo(img5.alt);
   getChampionSkins(img5.alt);
-  getChampionRole(img5.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img6 = images[5];
@@ -318,10 +71,8 @@ img6.onclick = function(evt){
   getChampionStats(img6.alt);
   getChampionAbilityInfo(img6.alt);
   getChampionSkins(img6.alt);
-  getChampionRole(img6.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img7 = images[6];
@@ -331,10 +82,8 @@ img7.onclick = function(evt){
   getChampionStats(img7.alt);
   getChampionAbilityInfo(img7.alt);
   getChampionSkins(img7.alt);
-  getChampionRole(img7.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img8 = images[7];
@@ -344,10 +93,8 @@ img8.onclick = function(evt){
   getChampionStats(img8.alt);
   getChampionAbilityInfo(img8.alt);
   getChampionSkins(img8.alt);
-  getChampionRole(img8.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img9 = images[8];
@@ -357,10 +104,8 @@ img9.onclick = function(evt){
   getChampionStats(img9.alt);
   getChampionAbilityInfo(img9.alt);
   getChampionSkins(img9.alt);
-  getChampionRole(img9.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img10 = images[9];
@@ -370,10 +115,8 @@ img10.onclick = function(evt){
   getChampionStats(img10.alt);
   getChampionAbilityInfo(img10.alt);
   getChampionSkins(img10.alt);
-  getChampionRole(img10.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img11 = images[10];
@@ -383,10 +126,8 @@ img11.onclick = function(evt){
   getChampionStats(img11.alt);
   getChampionAbilityInfo(img11.alt);
   getChampionSkins(img11.alt);
-  getChampionRole(img11.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img12 = images[11];
@@ -396,10 +137,8 @@ img12.onclick = function(evt){
   getChampionStats(img12.alt);
   getChampionAbilityInfo(img12.alt);
   getChampionSkins(img12.alt);
-  getChampionRole(img12.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img13 = images[12];
@@ -409,10 +148,8 @@ img13.onclick = function(evt){
   getChampionStats(img13.alt);
   getChampionAbilityInfo(img13.alt);
   getChampionSkins(img13.alt);
-  getChampionRole(img13.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img14 = images[13];
@@ -422,10 +159,8 @@ img14.onclick = function(evt){
   getChampionStats(img14.alt);
   getChampionAbilityInfo(img14.alt);
   getChampionSkins(img14.alt);
-  getChampionRole(img14.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img15 = images[14];
@@ -435,10 +170,8 @@ img15.onclick = function(evt){
   getChampionStats(img15.alt);
   getChampionAbilityInfo(img15.alt);
   getChampionSkins(img15.alt);
-  getChampionRole(img15.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 var img16 = images[15];
@@ -448,10 +181,8 @@ img16.onclick = function(evt){
   getChampionStats(img16.alt);
   getChampionAbilityInfo(img16.alt);
   getChampionSkins(img16.alt);
-  getChampionRole(img16.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
-  //captionText.innerHTML = tmp[2];
 }
 
 function getLore(alt){
@@ -482,25 +213,6 @@ function getLore(alt){
       captionText.innerHTML = mydata[0].description; //puts the string into the html file and says it is html code
     };
 }
-
-// #initizing a string with html code
-// let text =
-//   "<table id='students'><tr><th>Student Name</th><th>Grade</th></tr>";
-// #formatting the given data into the html code 
-// for (key in html) {
-//   console.log(key);
-//   text +=
-//     "<tr><td name='name'>" +
-//     html[key]["student_name"] +
-//     "</td><td>" +
-//     "<input type='text' name='grade_values' value=" +
-//     html[key]["grade"] +
-//     ">" +
-//     "</td></tr>";
-// }
-// text += "</table>";
-// console.log(text);
-// document.getElementById("currentStudents").innerHTML = text; #puts the string into the html file and says it is html code
 
 function getChampionInfo(alt){
   //Storing the data that you will send as a json object
@@ -540,7 +252,7 @@ function getChampionInfo(alt){
       const myObj = JSON.parse(this.responseText);
       let text = "<table border='1'>"
 
-      championList = ["Champion", "Price", "Dmg Type"];
+      championList = ["Champion", "Blue Essence Price", "Dmg Type"];
       text += "<th>" + championList[0] + "</th>";
       text += "<th>" + championList[1] + "</th>";
       text += "<th>" + championList[2] + "</th>";
@@ -675,43 +387,6 @@ function getChampionAbilityInfo(alt){
   };
 }
 
-function getChampionRole(alt){
-  //Storing the data that you will send as a json object
-  const json_datav2 = {
-    mode: "role",
-    alt: alt,
-  };
-
-  //initializing everything to make the api call this is using AJAX
-  const xhttp = new XMLHttpRequest();
-  const method = "POST";
-  const url = "http://127.0.0.1:5000/user";
-
-  const async = true;
-  xhttp.open(method, url, async); //opens connection
-  console.log(JSON.stringify(json_datav2));
-  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
-
-  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
-  xhttp.onload = function () {
-    console.log(this.responseText);
-    //tmp.push(this.responseText)
-    //document.getElementById("ChampionRole").innerHTML = this.responseText;
-
-    const myObj = JSON.parse(this.responseText);
-      let text = "<table border='1'>"
-      championList = ["Lane"];
-      text += "<th>" + championList[0] + "</th>";
-      for (let x in myObj) {
-        console.log(myObj)
-        text += "<tr><td>" + myObj[x].name + "</td></tr>";
-        
-      }
-      text += "</table>"    
-      document.getElementById("demo4").innerHTML = text;
-  };
-}
-
 function getChampionSkins(alt){
   //Storing the data that you will send as a json object
   const json_datav2 = {
@@ -738,7 +413,7 @@ function getChampionSkins(alt){
 
     const myObj = JSON.parse(this.responseText);
       let text = "<table border='1'>"
-      championList = ["Name", "Price", "Chroma", "Prestige Edition"];
+      championList = ["Name", "Riot Points Price", "Chroma", "Prestige Edition"];
       text += "<th>" + championList[0] + "</th>";
       text += "<th>" + championList[1] + "</th>";
       text += "<th>" + championList[2] + "</th>";
@@ -755,6 +430,133 @@ function getChampionSkins(alt){
       document.getElementById("demo5").innerHTML = text;
 
     
+  };
+}
+
+
+function checkData(){
+  var checkBoxprice = document.getElementsByClassName("pricecheck");
+  var listpricealt = []
+  for(var i = 0; i < checkBoxprice.length; i++){
+    var input = checkBoxprice[i]
+    if (input.checked == true){
+      console.log("Pressed Price Checkbox")
+      console.log(input.alt)
+      listpricealt.push(input.alt)
+    } else {
+       console.log("Didnt press Price Checkbox")
+    }
+  }
+
+  var checkBoxrole = document.getElementsByClassName("rolecheck");
+  var listrolealt = []
+  for(var i = 0; i < checkBoxrole.length; i++){
+    var input = checkBoxrole[i]
+    if (input.checked == true){
+      console.log("Pressed Role Radio Button")
+      console.log(input.alt)
+      if(input.alt == ''){
+        continue
+      }else{
+        listrolealt.push(input.alt)
+      }
+      
+    } else {
+       console.log("Didnt press Role Radio Button")
+    }
+  }
+  
+
+  var checkBoxdmgType = document.getElementsByClassName("damagetype");
+  var listdmgTypealt = []
+  for(var i = 0; i < checkBoxdmgType.length; i++){
+    var input = checkBoxdmgType[i]
+    if (input.checked == true){
+      console.log("Pressed Checkbox")
+      console.log(input.alt)
+      if(input.alt == ''){
+        continue
+      }else{
+        listdmgTypealt.push(input.alt)
+      }
+    } else {
+       console.log("Didnt press Checkbox")
+    }
+  }
+  console.log(listpricealt)
+  console.log(listrolealt)
+  console.log(listdmgTypealt)
+  getData(listpricealt, listrolealt, listdmgTypealt)
+}
+
+function getData(price, role, dmgType){
+  //Storing the data as a javascript object
+  //https://www.w3schools.com/js/js_json_stringify.asp
+  //https://www.w3schools.com/js/js_ajax_intro.asp and all concurrent pages about it
+  const json_data = {
+    mode: "checkBox",
+    price: price,
+    role: role,
+    dmgType: dmgType,
+  };
+
+  // Got a lot of help from classmate Yoan for API
+  //initializing everything to make the api call this is using AJAX
+  const xhttp = new XMLHttpRequest();
+  const method = "POST";
+  const url = "http://127.0.0.1:5000/user";
+
+  const async = true;
+  xhttp.open(method, url, async); //opens connection to the backend
+  console.log(JSON.stringify(json_data));
+  xhttp.send(JSON.stringify(json_data)); //turns the javascript object to a regular json string and sends it to the backend
+
+  //#in a post you can receive data from the backend and the .onload can be use to see the data you are returning
+  xhttp.onload = function () {
+    //https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+    console.log("made API call");
+    console.log(this.responseText);
+    const myObj = JSON.parse(this.responseText);
+    console.log(myObj)
+
+    var imgalt = []
+    var objType = []
+   
+    for (let x in myObj) {
+      objType.push(myObj[x].name)
+    }
+    
+    for (var i = 0; i < images.length; i++){
+      var img = images[i];
+      imgalt.push(img.alt)      
+    }
+    console.log("imgalt" + imgalt)
+    console.log("objtype" + objType)
+    //https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
+    let difference = imgalt.filter(x => !objType.includes(x))
+    console.log(difference)
+
+    if(objType.length == 0){
+      for (var i = 0; i < images.length; i++){
+        var img = images[i];
+        img.style.visibility = "hidden";
+      }
+    }else{
+      for (var i = 0; i < images.length; i++){
+        var img = images[i];
+        img.style.visibility = "visible";
+        if(objType.length == 0){
+          img.style.visibility = "visible";
+        }else{
+          for(var j = 0; j < difference.length; j++){
+            if(difference[j] == img.alt){
+              console.log(img.alt)
+              img.style.visibility = "hidden";
+            }
+          }
+        }
+      }
+    }
   };
 }
 

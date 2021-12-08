@@ -1,16 +1,16 @@
-from sqlite3 import Error
-from flask.helpers import send_from_directory
-from flask.json import dump
-import pandas as pd
+import pandas
+import os
+import json
 import sqlite3
-from flask import Flask, request, render_template, jsonify, session, redirect
+from sqlite3 import Error
+from flask import Flask, request, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
 from flask_login import login_user
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-import os
-import json
+from flask.helpers import send_from_directory
+
 
 app = Flask(__name__)
 app.secret_key = 'ASDASDDASDSAFA'
@@ -52,7 +52,7 @@ class adminview(ModelView):
 
 
 class Users(UserMixin, db.Model):
-    __tablename__ = 'users'  # -> this 1 line of code enluded me for so long
+    __tablename__ = 'users'  # -> this line of code syncs data from the sqlite3 database
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), unique=True)
     name = db.Column(db.String(30))
@@ -304,9 +304,6 @@ def user():
     if(request.method == 'POST'):
         mode = json.loads(request.data)['mode']
         print(mode)
-        # print(championname)
-        #size = json.loads(request.data)
-        # print(size)
         conn = openConnection("data.sqlite")
         sql = """"""
         if mode == 'lore':
@@ -344,106 +341,224 @@ def user():
                     WHERE champion.id = championSkins.champion_id
                     AND champion.name = '{}'
                     """.format(championname)
-        elif mode == 'price':
-            listprice = json.loads(request.data)['alt']
-            size = len(listprice)
-            print(size)
-            if size == 0:
-                print("empty")
-                return json.dumps("empty")
-            elif size == 1:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.price NOT IN({})
-                        """.format(listprice[0])
-            elif size == 2:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.price NOT IN({}, {})
-                        """.format(listprice[0], listprice[1])
-            elif size == 3:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.price NOT IN({}, {}, {})
-                        """.format(listprice[0], listprice[1], listprice[2])
-            elif size == 4:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.price NOT IN({}, {}, {},{})
-                        """.format(listprice[0], listprice[1], listprice[2], listprice[3])
-            elif size == 5:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.price NOT IN({}, {},{},{},{})
-                        """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4])
-        elif mode == 'role':
-            listrole = json.loads(request.data)['alt']
-            size = len(listrole)
-            print(size)
-            if size == 0:
-                print("empty")
-                return json.dumps("empty")
-            elif size == 1:
-                print("in size == 1")
-                sql = """SELECT champion.name
-                        FROM champion, role, champRole
-                        WHERE champion.id = champRole.champion_id
-                        AND role.id = champRole.role_id
-                        AND role.name IN("{}")
-                        """.format(listrole[0])
-            elif size == 2:
-                sql = """SELECT champion.name
-                        FROM champion, role, champRole
-                        WHERE champion.id = champRole.champion_id
-                        AND role.id = champRole.role_id
-                        AND role.name IN("{}", "{}")
-                        """.format(listrole[0], listrole[1])
-            elif size == 3:
-                sql = """SELECT champion.name
-                        FROM champion, role, champRole
-                        WHERE champion.id = champRole.champion_id
-                        AND role.id = champRole.role_id
-                        AND role.name IN("{}", "{}", "{}")
-                        """.format(listrole[0], listrole[1], listrole[2])
-            elif size == 4:
-                sql = """SELECT champion.name
-                        FROM champion, role, champRole
-                        WHERE champion.id = champRole.champion_id
-                        AND role.id = champRole.role_id
-                        AND role.name IN("{}", "{}", "{}","{}")
-                        """.format(listrole[0], listrole[1], listrole[2], listrole[3])
-            elif size == 5:
-                sql = """SELECT champion.name
-                        FROM champion, role, champRole
-                        WHERE champion.id = champRole.champion_id
-                        AND role.id = champRole.role_id
-                        AND role.name IN("{}", "{}","{}","{}","{}")
-                        """.format(listrole[0], listrole[1], listrole[2], listrole[3], listrole[4])
-        elif mode == 'dmgType':
-            listdmgType = json.loads(request.data)['alt']
-            size = len(listdmgType)
-            print(size)
-            if size == 0:
-                print("empty")
-                return json.dumps("empty")
-            elif size == 1:
-                print("in size == 1")
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.dmgType NOT IN("{}")
-                        """.format(listdmgType[0])
-            elif size == 2:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.dmgType NOT IN("{}", "{}")
-                        """.format(listdmgType[0], listdmgType[1])
-            elif size == 3:
-                sql = """SELECT champion.name
-                        FROM champion
-                        WHERE champion.dmgType NOT IN("{}", "{}", "{}")
-                        """.format(listdmgType[0], listdmgType[1], listdmgType[2])
+        elif mode == 'checkBox':
+            listprice = json.loads(request.data)['price']
+            listrole = json.loads(request.data)['role']
+            listdmgType = json.loads(request.data)['dmgType']
+            pricesize = len(listprice)
+            rolesize = len(listrole)
+            dmgTypesize = len(listdmgType)
+            print("listprice size : {}".format(pricesize))
+            print("listrole size : {}".format(rolesize))
+            print("listdmgType size : {}".format(dmgTypesize))
+            if pricesize == 0:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                """
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.dmgType IN('{}')
+                                """.format(listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND role.name IN("{}")
+                                """.format(listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listrole[0], listdmgType[0])
+            elif pricesize == 1:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({})
+                                """.format(listprice[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({})
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({})
+                                AND role.name IN("{}")
+                                """.format(listprice[0], listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({})
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listrole[0], listdmgType[0])
+            elif pricesize == 2:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {})
+                                """.format(listprice[0], listprice[1])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {})
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {})
+                                AND role.name IN("{}")
+                                """.format(listprice[0], listprice[1], listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {})
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listrole[0], listdmgType[0])
+            elif pricesize == 3:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {})
+                                """.format(listprice[0], listprice[1], listprice[2])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {})
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {})
+                                AND role.name IN("{}")
+                                """.format(listprice[0], listprice[1], listprice[2], listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {})
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listrole[0], listdmgType[0])
+            elif pricesize == 4:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {})
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {})
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {})
+                                AND role.name IN("{}")
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {})
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listrole[0], listdmgType[0])
+            elif pricesize == 5:
+                if rolesize == 0:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {}, {})
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {}, {})
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4], listdmgType[0])
+                else:
+                    if dmgTypesize == 0:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {}, {})
+                                AND role.name IN("{}")
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4], listrole[0])
+                    else:
+                        sql = """SELECT champion.name
+                                FROM champion, role, champRole
+                                WHERE champion.id = champRole.champion_id
+                                AND role.id = champRole.role_id
+                                AND champion.price IN({}, {}, {}, {}, {})
+                                AND role.name IN("{}")
+                                AND champion.dmgType IN('{}')
+                                """.format(listprice[0], listprice[1], listprice[2], listprice[3], listprice[4], listrole[0], listdmgType[0])
 
-        df = pd.read_sql_query(sql, con=conn).to_dict('records')
+        df = pandas.read_sql_query(sql, con=conn).to_dict('records')
         print(df)
         return json.dumps(df)
     if(request.method == 'GET'):

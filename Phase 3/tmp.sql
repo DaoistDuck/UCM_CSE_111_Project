@@ -12,8 +12,10 @@
 -- WHERE champion.id = lore.champion_id
 -- AND champion.name = 'Nasus';
 
-SELECT champion.name
+SELECT DISTINCT champion.name
 FROM champion, role, champRole
 WHERE champion.id = champRole.champion_id
 AND role.id = champRole.role_id
-AND role.name IN("Top")
+AND champion.price IN()
+AND role.name IN('Top')
+AND champion.dmgType IN('ad');
