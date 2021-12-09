@@ -47,9 +47,6 @@ def createTables(_conn):
                     id INTEGER NOT NULL,
                     name VARCHAR(50) NOT NULL,
                     price INTEGER NOT NULL,
-                    lore_id INTEGER NOT NULL,
-                    championstats_id INTEGER NOT NULL,
-                    abilityinfo_id INTEGER NOT NULL,
                     dmgType VARCHAR(50) NOT NULL)"""  # GOOD
         _conn.execute(sql)
 
