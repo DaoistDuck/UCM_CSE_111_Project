@@ -341,6 +341,14 @@ def user():
                     WHERE champion.id = championSkins.champion_id
                     AND champion.name = '{}'
                     """.format(championname)
+        elif mode == 'items':
+            championname = json.loads(request.data)['alt']
+            sql = """SELECT items.name
+                    FROM champion, items, champItems
+                    WHERE champion.id = champItems.champion_id
+                    AND items.id = champItems.items_id
+                    AND champion.name = '{}'
+                    """.format(championname)
         elif mode == 'checkBox':
             listprice = json.loads(request.data)['price']
             listrole = json.loads(request.data)['role']

@@ -190,15 +190,12 @@ def populateTables(_conn):
         champion = pandas.read_csv(r"data/champion.csv")
         championdf = pandas.DataFrame(champion)
         for row in championdf.itertuples():
-            sql = """INSERT INTO champion VALUES(?,?,?,?,?,?,?)
+            sql = """INSERT INTO champion VALUES(?,?,?,?)
                     """
             args = [
                 row.id,
                 row.name,
                 row.price,
-                row.lore_id,
-                row.championstats_id,
-                row.abilityinfo_id,
                 row.dmgType,
             ]
             _conn.execute(sql, args)
@@ -338,23 +335,22 @@ def Q1(_conn):
 
     Q1Output = open("output/1.out", "w")
     Q1Write = open("output/1.out", "w")
-
     try:
         sql = """SELECT *
                 FROM champion
                 GROUP BY champion.id;"""
         cursor = _conn.cursor()
         cursor.execute(sql)
-        header = "{:<10} {:<15} {:<10} {:<10} {:<10}".format(
-            "id", "name", "price", "lore_id", "championstats_id"
+        header = "{:<10} {:<15} {:<10} {:<10}".format(
+            "id", "name", "price", "dmgType"
         )
         print(header)
         Q1Write.write(header + "\n")
         rows = cursor.fetchall()
         for row in rows:
             # print(row)
-            data = "{:<10} {:<15} {:<10} {:<10} {:<10}".format(
-                row[0], row[1], row[2], row[3], row[4]
+            data = "{:<10} {:<15} {:<10} {:<10}".format(
+                row[0], row[1], row[2], row[3]
             )
             print(data)
             Q1Write.write(data + "\n")
@@ -973,15 +969,12 @@ def Q16(_conn):
         input = pandas.read_csv(r"input/teemo.csv")
         inputdf = pandas.DataFrame(input)
         for row in inputdf.itertuples():
-            sql = """INSERT INTO champion VALUES(?,?,?,?,?,?,?)
+            sql = """INSERT INTO champion VALUES(?,?,?,?)
                     """
             args = [
                 row.id,
                 row.name,
                 row.price,
-                row.lore_id,
-                row.championstats_id,
-                row.abilityinfo_id,
                 row.dmgType,
             ]
             _conn.execute(sql, args)

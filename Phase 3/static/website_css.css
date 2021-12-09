@@ -1,136 +1,136 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .column {
-  float: left;
-  width: 12.5%; /* if need to make more/less pictures */
-  padding: 5px;
+    float: left;
+    width: 12.5%; /* if need to make more/less pictures */
+    padding: 5px;
 }
 
 /* Clearfix (clear floats) */
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 img {
-  border: 5px solid rgb(168, 19, 123);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /*https://www.w3schools.com/howto/howto_css_image_center.asp */
+    border: 5px solid rgb(168, 19, 123);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*https://www.w3schools.com/howto/howto_css_image_center.asp */
 }
 
 body {
-  background-image: url("../static/images/Arcanebackground.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  /*https://www.w3schools.com/html/html_images_background.asp */
+    background-image: url("../static/images/Arcanebackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*https://www.w3schools.com/html/html_images_background.asp */
 }
 
 /* This part for popup */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #myImg:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
 }
 
 /* Caption of Modal Image */
 #caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
 }
 
 /* Add Animation */
 .modal-content,
 #caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }
 
 @-webkit-keyframes zoom {
-  from {
-    -webkit-transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
 }
 
 @keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* The Close Button */
 .close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
+@media only screen and(max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
 }
 /*End of popup*/
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img*/
@@ -140,47 +140,50 @@ body {
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body,
 html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
 }
 
 /* Style tab links */
 .tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 20%;
 }
 
 .tablink:hover {
-  background-color: #777;
+    background-color: #777;
 }
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
 }
 
 #Champion {
-  background-color: red;
+    background-color: red;
 }
 #AbilityInfo {
-  background-color: green;
+    background-color: green;
 }
 #ChampionStats {
-  background-color: blue;
+    background-color: blue;
 }
 #ChampionSkins {
-  background-color: orange;
+    background-color: orange;
+}
+#ChampionItems {
+    background-color: purple;
 }
 
 /* End of tabs*/
@@ -189,24 +192,24 @@ html {
 /*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
 /* The container */
 .container {
-  display: block;
-  position: relative;
-  padding-left: 0px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* column stuff*/
 .column2 {
-  float: right;
-  width: 33%;
-  padding: 5px;
-  text-align: center;
+    float: right;
+    width: 33%;
+    padding: 5px;
+    text-align: center;
 }
 
 /* End of checkboxs*/
@@ -214,20 +217,20 @@ html {
 table,
 td,
 th {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 td {
-  text-align: center;
+    text-align: center;
 }
 
 h3 {
-  text-align: center;
+    text-align: center;
 }
 
 /* Start of radio buttons to look like box*/

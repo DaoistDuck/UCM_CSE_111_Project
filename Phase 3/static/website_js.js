@@ -16,6 +16,7 @@ img.onclick = function(evt){
   getChampionStats(img.alt);
   getChampionAbilityInfo(img.alt);
   getChampionSkins(img.alt);
+  getChampionItems(img.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -27,6 +28,7 @@ img2.onclick = function(evt){
   getChampionStats(img2.alt);
   getChampionAbilityInfo(img2.alt);
   getChampionSkins(img2.alt);
+  getChampionItems(img2.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -38,6 +40,7 @@ img3.onclick = function(evt){
   getChampionStats(img3.alt);
   getChampionAbilityInfo(img3.alt);
   getChampionSkins(img3.alt);
+  getChampionItems(img3.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -49,6 +52,7 @@ img4.onclick = function(evt){
   getChampionStats(img4.alt);
   getChampionAbilityInfo(img4.alt);
   getChampionSkins(img4.alt);
+  getChampionItems(img4.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -60,6 +64,7 @@ img5.onclick = function(evt){
   getChampionStats(img5.alt);
   getChampionAbilityInfo(img5.alt);
   getChampionSkins(img5.alt);
+  getChampionItems(img5.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -71,6 +76,7 @@ img6.onclick = function(evt){
   getChampionStats(img6.alt);
   getChampionAbilityInfo(img6.alt);
   getChampionSkins(img6.alt);
+  getChampionItems(img6.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -82,6 +88,7 @@ img7.onclick = function(evt){
   getChampionStats(img7.alt);
   getChampionAbilityInfo(img7.alt);
   getChampionSkins(img7.alt);
+  getChampionItems(img7.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -93,6 +100,7 @@ img8.onclick = function(evt){
   getChampionStats(img8.alt);
   getChampionAbilityInfo(img8.alt);
   getChampionSkins(img8.alt);
+  getChampionItems(img8.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -104,6 +112,7 @@ img9.onclick = function(evt){
   getChampionStats(img9.alt);
   getChampionAbilityInfo(img9.alt);
   getChampionSkins(img9.alt);
+  getChampionItems(img9.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -115,6 +124,7 @@ img10.onclick = function(evt){
   getChampionStats(img10.alt);
   getChampionAbilityInfo(img10.alt);
   getChampionSkins(img10.alt);
+  getChampionItems(img10.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -126,6 +136,7 @@ img11.onclick = function(evt){
   getChampionStats(img11.alt);
   getChampionAbilityInfo(img11.alt);
   getChampionSkins(img11.alt);
+  getChampionItems(img11.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -137,6 +148,7 @@ img12.onclick = function(evt){
   getChampionStats(img12.alt);
   getChampionAbilityInfo(img12.alt);
   getChampionSkins(img12.alt);
+  getChampionItems(img12.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -148,6 +160,7 @@ img13.onclick = function(evt){
   getChampionStats(img13.alt);
   getChampionAbilityInfo(img13.alt);
   getChampionSkins(img13.alt);
+  getChampionItems(img13.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -159,6 +172,7 @@ img14.onclick = function(evt){
   getChampionStats(img14.alt);
   getChampionAbilityInfo(img14.alt);
   getChampionSkins(img14.alt);
+  getChampionItems(img14.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -170,6 +184,7 @@ img15.onclick = function(evt){
   getChampionStats(img15.alt);
   getChampionAbilityInfo(img15.alt);
   getChampionSkins(img15.alt);
+  getChampionItems(img15.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -181,6 +196,7 @@ img16.onclick = function(evt){
   getChampionStats(img16.alt);
   getChampionAbilityInfo(img16.alt);
   getChampionSkins(img16.alt);
+  getChampionItems(img16.alt);
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -268,6 +284,57 @@ function getChampionInfo(alt){
   };
 }
 
+
+function getChampionItems(alt){
+  //Storing the data that you will send as a json object
+  const json_datav2 = {
+    mode: "items",
+    alt: alt,
+  };
+
+  //initializing everything to make the api call this is using AJAX
+  const xhttp = new XMLHttpRequest();
+  const method = "POST";
+  const url = "http://127.0.0.1:5000/user";
+
+  const async = true;
+  xhttp.open(method, url, async); //opens connection
+  console.log(JSON.stringify(json_datav2));
+  xhttp.send(JSON.stringify(json_datav2)); //sends data and turns json object to a regular json
+
+  //#in a post you can return a msg, or data and the .onload can be use to see the data you are returning
+  xhttp.onload = function () {
+    tmp = this.responseText
+    console.log(tmp);
+    //tmp.push(this.responseText)
+    console.log("made API call")
+    //document.getElementById("Champion").innerHTML = this.responseText;
+    //https://www.w3schools.com/js/js_json_html.asp
+
+      // var orderArrayHeader = ["Name","Price","Dmg Type"];
+      // var thead = document.createElement('thead');
+
+      // table.appendChild(thead);
+
+      // for(var i=0;i<orderArrayHeader.length;i++){
+      //     thead.appendChild(document.createElement("th")).
+      //     appendChild(document.createTextNode(orderArrayHeader[i]));
+      // }
+      const myObj = JSON.parse(this.responseText);
+      let text = "<table border='1'>"
+
+      championList = ["Items"];
+      text += "<th>" + championList[0] + "</th>";
+      for (let x in myObj) {
+        console.log(myObj)
+        text += "<tr><td>" + myObj[x].name + "</td></td>";
+      }
+      text += "</table>"    
+      document.getElementById("demo6").innerHTML = text;
+   
+  };
+}
+
 function getChampionStats(alt){
   //Storing the data that you will send as a json object
   const json_datav2 = {
@@ -340,6 +407,8 @@ function getChampionStats(alt){
       document.getElementById("demo2").innerHTML = text;
   };
 }
+
+
 
 function getChampionAbilityInfo(alt){
   //Storing the data that you will send as a json object
