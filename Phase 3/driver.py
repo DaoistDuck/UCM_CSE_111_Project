@@ -72,18 +72,12 @@ class Champion(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30))
     price = db.Column(db.Integer)
-    lore_id = db.Column(db.Integer)
-    championstats_id = db.Column(db.Integer)
-    abilityInfo_id = db.Column(db.Integer)
     dmgType = db.Column(db.String(30))
 
-    def __init__(self, id, name, price, lore_id, championstats_id, abilityInfo_id, dmgType):
+    def __init__(self, id, name, price, dmgType):
         self.id = id
         self.name = name
         self.price = price
-        self.lore_id = lore_id
-        self.championstats_id = championstats_id
-        self.abilityInfo_id = abilityInfo_id
         self.dmgType = dmgType
 
 
