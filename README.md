@@ -1,6 +1,6 @@
 # UCM_CSE_111_Project
 
-This project was to create a League of Legends Champion Stats website and show data based on the champion selected using SQL.
+This project was to create a League of Legends Champion Stats website and show data based on the champion selected using our knowledge of SQLite.
 
 To run:
 First run database.py to create the sqlite database with the command
