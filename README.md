@@ -1,4 +1,4 @@
-#League-of-Legends-Basic-Champion-Wiki-Website
+# League-of-Legends-Basic-Champion-Wiki-Website
 
 This project for UCM CSE 111 Database Systems was to create a League of Legends Champion Stats website and show data based on the champion selected using our knowledge of SQLite.
 
